@@ -35,6 +35,9 @@ const Soulign = styled.div`
 `
 
 const AnimalInfo = ({image, image_ref, animal, scientific_name, map_image, statut, age, gestation, babys, nouriture, ennemis, temperament, children }) => {
+  const widthSize = (((window.innerWidth-400)/300)*2)+12
+  const heigthSize = (((window.innerHeight - 400)/300)*6)+8
+  const fontSize = widthSize > heigthSize ? heigthSize : widthSize
   const img = getImage(image)  
   return (
     <>
@@ -44,7 +47,7 @@ const AnimalInfo = ({image, image_ref, animal, scientific_name, map_image, statu
         image={img}
         backgroundColor={"#FFE6B5"}
       />
-      <TextArea fontSize={typeof window !== `undefined` ? (((window.innerHeight - 400)/300)*6)+8 : 12} 
+      <TextArea fontSize={typeof window !== `undefined` ? fontSize : 12} 
                 marginTop={typeof window !== `undefined` ? (((window.innerHeight - 400)/300)*4)-4 : 0}>
         <Text><Soulign>Nom Scientifique:</Soulign>{scientific_name}</Text>
         <Text><Soulign>Durée de vie:</Soulign>{age}</Text>

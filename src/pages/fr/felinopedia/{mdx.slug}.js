@@ -44,6 +44,7 @@ const Panel = styled.div`
   height: 96%; 
   width: calc(100% - 20px);
   max-width: 400px;
+  min-width: 300px;
   color: #11574E;
   font-weight: bold;
   background-color: #FFE6B5;
