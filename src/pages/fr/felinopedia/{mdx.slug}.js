@@ -78,7 +78,8 @@ const ContentArea = styled.main`
   margin-top: 5px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: ${(props) => props.windowSize < 730 ? `space-around` : `flex-start` };
+  align-content: flex-start;
   width: ${(props) => props.windowSize < 730 ? "100%" : "calc(100% - 426px)"};
   ${(props) => props.windowSize < 730 ? "" : "overflow-y: scroll; ::-webkit-scrollbar {display: none; /* Chrome Safari */} scrollbar-width: none; /* Firefox */ -ms-overflow-style: none; /* IE 10+ */;"}
 `;
