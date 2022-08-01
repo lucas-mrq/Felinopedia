@@ -17,7 +17,7 @@ export const query = graphql`
         hero_image_credit_text
         hero_image {
           childImageSharp {
-            gatsbyImageData(width: 200)
+            gatsbyImageData
           }
         }
         animal
@@ -52,10 +52,10 @@ const Panel = styled.div`
   border-color: #FFCBA5;
   border-radius: 10px;
   margin-top: 10px; 
-  margin-right: ${(props) => props.window > 730 ? "10px" : "calc(50% - 203px)"};
-  margin-left: ${(props) => props.window > 730 ? "10px" : "calc(50% - 203px)"};
+  margin-right: ${(props) => props.windowSize > 730 ? "10px" : "calc(50% - 203px)"};
+  margin-left: ${(props) => props.windowSize > 730 ? "10px" : "calc(50% - 203px)"};
   margin-bottom: 5px;
-  ${(props) => props.window < 730 ? "cursor: pointer;" : ""}
+  ${(props) => props.windowSize < 730 ? "cursor: pointer;" : ""}
 `
 
 const AnimalPanel = styled.div`
@@ -79,11 +79,11 @@ const ContentArea = styled.main`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  width: ${(props) => props.window < 730 ? "100%" : "calc(100% - 426px)"};
-  ${(props) => props.window < 730 ? "" : "overflow-y: scroll; ::-webkit-scrollbar {display: none; /* Chrome Safari */} scrollbar-width: none; /* Firefox */ -ms-overflow-style: none; /* IE 10+ */;"}
+  width: ${(props) => props.windowSize < 730 ? "100%" : "calc(100% - 426px)"};
+  ${(props) => props.windowSize < 730 ? "" : "overflow-y: scroll; ::-webkit-scrollbar {display: none; /* Chrome Safari */} scrollbar-width: none; /* Firefox */ -ms-overflow-style: none; /* IE 10+ */;"}
 `;
 const Flex = styled.div`
-  display: ${(props) => props.window > 730 ? "flex" : "block"};
+  display: ${(props) => props.windowSize > 730 ? "flex" : "block"};
   justify-content: center;
   flex-wrap: wrap;
   height: 99%;
@@ -97,8 +97,8 @@ const FelinopediaPost = ({ data }) => {
 
   return (
     <Layout pageTitle={data.mdx.frontmatter.title} language={"french"}>
-      <Flex window={typeof window !== `undefined` ? window.innerWidth : 750}>
-        <Panel onClick={() => typeof window !== `undefined` && window.innerWidth < 730 ? setShowItems(true):  null} window={window.innerWidth}>
+      <Flex windowSize={typeof window !== `undefined` ? window.innerWidth : 750}>
+        <Panel onClick={() => typeof window !== `undefined` && window.innerWidth < 730 ? setShowItems(true):  null} windowSize={typeof window !== `undefined` ? window.innerWidth : 750}>
           {showItems ? 
             <AnimalInfo 
               image={data.mdx.frontmatter.hero_image}
@@ -118,7 +118,7 @@ const FelinopediaPost = ({ data }) => {
         </Panel>
         { !showItems && typeof window !== `undefined` && window.innerWidth < 730 ?
           null
-        : <ContentArea window={typeof window !== `undefined` ? window.innerWidth : 750}>
+        : <ContentArea windowSize={typeof window !== `undefined` ? window.innerWidth : 750}>
             {zoos.map((zoo, index) => {
               let zooInfo = JSON.parse(zoo)
               return (<AnimalPanel

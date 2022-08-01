@@ -33,7 +33,7 @@ export const query = graphql`
           hero_image_alt
           hero_image {
             childImageSharp {
-              gatsbyImageData(width: 200)
+              gatsbyImageData
             }
           }
           animal

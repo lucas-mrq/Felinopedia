@@ -16,7 +16,7 @@ export const query = graphql`
         hero_image_credit_text
         hero_image {
           childImageSharp {
-            gatsbyImageData(width: 200)
+            gatsbyImageData
           }
         }
         animal
