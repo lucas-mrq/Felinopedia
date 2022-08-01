@@ -34,7 +34,7 @@ export const query = graphql`
         nouriture
         ennemis
         temperament
-        animalData
+        jsonName
       }
     }
   }
@@ -95,8 +95,7 @@ const Flex = styled.div`
 const FelinopediaPost = ({ data }) => {
   const [showItems, setShowItems] = useState(true)
   const [selected, setSelected] = useState(null)
-  const zoos = data.mdx.frontmatter.animalData.split("_")
-
+  const animalData = require("../../../../data/" + data.mdx.frontmatter.jsonName + "/" + data.mdx.frontmatter.jsonName + ".json")
   return (
     <Layout pageTitle={data.mdx.frontmatter.title} language={"french"}>
       <Flex windowSize={typeof window !== `undefined` ? window.innerWidth : 750}>
@@ -116,28 +115,28 @@ const FelinopediaPost = ({ data }) => {
               nouriture={data.mdx.frontmatter.nouriture.split(", ")}
               ennemis={data.mdx.frontmatter.ennemis.split(", ")}
               temperament={data.mdx.frontmatter.temperament}
+              jsonName={data.mdx.frontmatter.jsonName}
             /> 
           : <Annuaire name={selected.zoo}/>}
         </Panel>
         {!showItems && typeof window !== `undefined` && window.innerWidth < 730 ?
           null
         : <ContentArea windowSize={typeof window !== `undefined` ? window.innerWidth : 750}>
-            {zoos.map((zoo, index) => {
-              let zooInfo = JSON.parse(zoo)
+            {animalData.map((zoo, index) => {
               return (<AnimalPanel
                 key={index}
                 index={index}
                 selected={selected}
                 onClick={() => {
-                  if (showItems || (selected && selected.zoo !== zooInfo.zoo)){
-                    setSelected(zooInfo)
+                  if (showItems || (selected && selected.zoo !== zoo.zoo)){
+                    setSelected(zoo)
                     setShowItems(false)
                   } else {
                     setSelected(null)
                     setShowItems(true)
                   }
                 }}>
-                {zooInfo.zoo}
+                {zoo.zoo}
               </AnimalPanel>)
             })}
           </ContentArea>}

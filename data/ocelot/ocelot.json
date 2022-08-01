@@ -1,0 +1,68 @@
+[
+    {	
+        "zoo": "Zoo d'Arcachon", 
+        "content":  [    
+                        {   
+                            "name": "Zoe", 
+                            "naissance": "XX.XX.XXXX", 
+                            "sexe": "femelle",
+                            "petits":   [ 
+                                            {   
+                                                "name": "Cali", 
+                                                "naissance": "06.07.2021", 
+                                                "sexe": "male", 
+                                                "petits": []
+                                            }
+                                        ]
+                        },
+                        {	
+                            "name": "Tiago", 
+                            "naissance": "XX.XX.XXXX", 
+                            "sexe": "male", 
+                            "petits":   [   
+                                            {	
+                                                "name":"Cali", 
+                                                "naissance": "06.07.2021", 
+                                                "sexe": "male", 
+                                                "petits": []
+                                            }
+                                        ]
+                        }
+                    ]
+    },
+    {   
+        "zoo": "Zoo de La Flèche", 
+        "content":  [    
+                        {   
+                            "name":"Tara", 
+                            "naissance": "29.10.2008", 
+                            "sexe": "femelle",
+                            "petits": []
+                        }, 
+                        {   
+                            "name":"Diego", 
+                            "naissance": "XX.XX.XXXX",
+                            "sexe": "male", 
+                            "petits": []
+                        }
+                    ]
+    },
+    {
+        "zoo": "Parc animalier des Pyrénées",
+        "content": [
+                        {
+                            "name": "Xena",
+                            "naissance": "XX.XX.XXXX",
+                            "sexe": "femelle",
+                            "petits":   [ 
+                                            {
+                                                "name": "Wakan",
+                                                "naissance": "18.10.2021",
+                                                "sexe": "male", 
+                                                "petits" : []
+                                            }
+                                        ]
+                        }
+        ]
+    }
+]
