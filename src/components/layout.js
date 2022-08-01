@@ -115,7 +115,7 @@ const Layout = ({ pageTitle, language, children }) => {
     }
   `)
   return (
-    <div lang={language==="french" ? "fr" : "en"}>
+    <>
       <title>{pageTitle} | {data.site.siteMetadata.title}</title>
       <nav>
         {typeof window !== `undefined` && window.innerWidth > 650 ?  
@@ -150,7 +150,7 @@ const Layout = ({ pageTitle, language, children }) => {
       <BottomArea>
         <BottomLink to="/fr/contact">About</BottomLink>
       </BottomArea>
-    </div>
+    </>
   );
 };
 export default Layout;
