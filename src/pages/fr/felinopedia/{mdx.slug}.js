@@ -97,8 +97,8 @@ const FelinopediaPost = ({ data }) => {
 
   return (
     <Layout pageTitle={data.mdx.frontmatter.title} language={"french"}>
-      <Flex window={window.innerWidth}>
-        <Panel onClick={() => window.innerWidth < 730 ? setShowItems(true):  null} window={window.innerWidth}>
+      <Flex window={typeof window !== `undefined` ? window.innerWidth : 750}>
+        <Panel onClick={() => typeof window !== `undefined` && window.innerWidth < 730 ? setShowItems(true):  null} window={window.innerWidth}>
           {showItems ? 
             <AnimalInfo 
               image={data.mdx.frontmatter.hero_image}
@@ -116,9 +116,9 @@ const FelinopediaPost = ({ data }) => {
               /> 
             : <Annuaire name={selected.zoo}/>}
         </Panel>
-        { !showItems && window.innerWidth < 730 ?
+        { !showItems && typeof window !== `undefined` && window.innerWidth < 730 ?
           null
-        : <ContentArea window={window.innerWidth}>
+        : <ContentArea window={typeof window !== `undefined` ? window.innerWidth : 750}>
             {zoos.map((zoo, index) => {
               let zooInfo = JSON.parse(zoo)
               return (<AnimalPanel

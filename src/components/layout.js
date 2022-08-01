@@ -118,7 +118,7 @@ const Layout = ({ pageTitle, language, children }) => {
     <div>
       <title>{pageTitle} | {data.site.siteMetadata.title}</title>
       <nav>
-        {window.innerWidth > 650 ?  
+        {typeof window !== `undefined` && window.innerWidth > 650 ?  
           <NavLink>
             {listMenu.map((item, index) => <Button key={index} current={pageTitle===item[0] ? 0 : null} rank={index} onClick={() => navigate(item[1])}><CenterText>{item[0]}</CenterText></Button>)}
             <Button title="En développement" flag={5}>
