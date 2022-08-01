@@ -12,6 +12,13 @@ const Image = styled(GatsbyImage)`
   border-width: 3px;
   border-color: #FFCBA5;
   border-radius: 5px;
+  height: 50%;
+`
+const TextArea = styled.div`
+  height: 35%;
+  width: 100%;
+  font-size: ${(props) => props.fontSize}px;
+  margin-top: ${(props) => props.marginTop}%;
 `
 const Text = styled.div`
   display: flex;
@@ -19,9 +26,8 @@ const Text = styled.div`
   border-style: solid;
   border-width: 0 0 1px 0;
   border-color: #FFCBA5;
-  padding-top: 5px;
-  padding-bottom: 5px;
-
+  padding-top: 1%;
+  padding-bottom: 1%;
 `
 const Soulign = styled.div`
   text-decoration: underline;
@@ -38,11 +44,14 @@ const AnimalInfo = ({image, image_ref, animal, scientific_name, map_image, statu
         image={img}
         backgroundColor={"#FFE6B5"}
       />
-      <Text><Soulign>Nom Scientifique:</Soulign>{scientific_name}</Text>
-      <Text><Soulign>Durée de vie:</Soulign>{age}</Text>
-      <Text><Soulign>Gestation:</Soulign>{gestation}</Text>
-      <Text><Soulign>Nombre de petits:</Soulign>{`de ${babys[0]} à ${babys[1]} petits.`}</Text>
-      <Text><Soulign>Temperament:</Soulign>{temperament}</Text>
+      <TextArea fontSize={typeof window !== `undefined` ? (((window.innerHeight - 400)/300)*6)+8 : 12} 
+                marginTop={typeof window !== `undefined` ? (((window.innerHeight - 400)/300)*4)-4 : 0}>
+        <Text><Soulign>Nom Scientifique:</Soulign>{scientific_name}</Text>
+        <Text><Soulign>Durée de vie:</Soulign>{age}</Text>
+        <Text><Soulign>Gestation:</Soulign>{gestation}</Text>
+        <Text><Soulign>Nombre de petits:</Soulign>{`de ${babys[0]} à ${babys[1]} petits.`}</Text>
+        <Text><Soulign>Temperament:</Soulign>{temperament}</Text>
+      </TextArea>
     </>
   );
 };

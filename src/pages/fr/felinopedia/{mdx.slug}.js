@@ -42,9 +42,9 @@ export const query = graphql`
 const Panel = styled.div`
   text-align: center;
   height: 96%; 
-  width: 400px;
+  width: calc(100% - 20px);
+  max-width: 400px;
   color: #11574E;
-  font-size: 14px;
   font-weight: bold;
   background-color: #FFE6B5;
   border-style: solid;
