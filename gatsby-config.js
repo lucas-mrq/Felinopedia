@@ -1,14 +1,25 @@
 module.exports = {
   siteMetadata: {
-    title: `Felinopedia`,
-    siteUrl: `https://www.yourdomain.tld`
+    title: "Felinopedia",
   },
-  plugins: ["gatsby-plugin-styled-components", "gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
-    resolve: 'gatsby-source-filesystem',
-    options: {
-      "name": "images",
-      "path": "./src/images/"
+  plugins: [
+    "gatsby-plugin-image",
+    "gatsby-plugin-sharp",
+    "gatsby-plugin-mdx",
+    "gatsby-transformer-sharp",
+    `gatsby-transformer-json`,
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: `data`,
+        path: `${__dirname}/data`,
+      }
     },
-    __key: "images"
-  }]
+    {
+      resolve: "gatsby-plugin-manifest",
+      options: {
+        icon: "src/images/felinopedia-icon.png",
+      }
+    },
+  ],
 };
