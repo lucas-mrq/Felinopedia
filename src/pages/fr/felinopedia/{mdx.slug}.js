@@ -53,8 +53,8 @@ const Panel = styled.div`
   border-color: #FFCBA5;
   border-radius: 10px;
   margin-top: 10px; 
-  margin-right: ${(props) => props.windowSize > 730 ? "10px" : "calc(50% - 203px)"};
-  margin-left: ${(props) => props.windowSize > 730 ? "10px" : "calc(50% - 203px)"};
+  margin-right: ${(props) => props.windowSize > 730 ? "10px" : "auto"};
+  margin-left: ${(props) => props.windowSize > 730 ? "10px" : "auto"};
   margin-bottom: 5px;
   ${(props) => props.windowSize < 730 ? "cursor: pointer;" : ""}
 `
@@ -100,7 +100,8 @@ const FelinopediaPost = ({ data }) => {
   return (
     <Layout pageTitle={data.mdx.frontmatter.title} language={"french"}>
       <Flex windowSize={typeof window !== `undefined` ? window.innerWidth : 750}>
-        <Panel onClick={() => typeof window !== `undefined` && window.innerWidth < 730 ? setShowItems(true):  null} windowSize={typeof window !== `undefined` ? window.innerWidth : 750}>
+        <Panel  onClick={() => typeof window !== `undefined` && window.innerWidth < 730 ? setShowItems(true) :  null} 
+                windowSize={typeof window !== `undefined` ? window.innerWidth : 750}>
           {showItems ? 
             <AnimalInfo 
               image={data.mdx.frontmatter.hero_image}
@@ -115,10 +116,10 @@ const FelinopediaPost = ({ data }) => {
               nouriture={data.mdx.frontmatter.nouriture.split(", ")}
               ennemis={data.mdx.frontmatter.ennemis.split(", ")}
               temperament={data.mdx.frontmatter.temperament}
-              /> 
-            : <Annuaire name={selected.zoo}/>}
+            /> 
+          : <Annuaire name={selected.zoo}/>}
         </Panel>
-        { !showItems && typeof window !== `undefined` && window.innerWidth < 730 ?
+        {!showItems && typeof window !== `undefined` && window.innerWidth < 730 ?
           null
         : <ContentArea windowSize={typeof window !== `undefined` ? window.innerWidth : 750}>
             {zoos.map((zoo, index) => {
