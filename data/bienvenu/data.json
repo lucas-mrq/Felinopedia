@@ -8,7 +8,7 @@
                             "name": "Zoe", 
                             "naissance": "XX.XX.XXXX", 
                             "sexe": "femelle",
-                            "gatsbyImageData": "./image/zoe.jpg",
+                            "animal_image": "./image/zoe.jpg",
                             "petits":   [ 
                                             "Cali"
                                         ]
@@ -17,7 +17,7 @@
                             "name": "Tiago", 
                             "naissance": "XX.XX.XXXX", 
                             "sexe": "male", 
-                            "gatsbyImageData": "./image/tiago.jpg",
+                            "animal_image": "./image/tiago.jpg",
                             "petits":   [   
                                             "Cali"
                                         ]
@@ -26,7 +26,7 @@
                             "name": "Cali", 
                             "naissance": "06.07.2021", 
                             "sexe": "male", 
-                            "gatsbyImageData": "./image/cali.jpg",
+                            "animal_image": "./image/cali.jpg",
                             "petits": []
                         }
                     ]
@@ -40,14 +40,14 @@
                             "name":"Tara", 
                             "naissance": "29.10.2008", 
                             "sexe": "femelle",
-                            "gatsbyImageData": "./image/tara.jpg",
+                            "animal_image": "./image/tara.jpg",
                             "petits": []
                         }, 
                         {   
                             "name":"Diego", 
                             "naissance": "XX.XX.XXXX",
                             "sexe": "male", 
-                            "gatsbyImageData": "./image/diego.jpg",
+                            "animal_image": "./image/diego.jpg",
                             "petits": []
                         }
                     ]
@@ -61,7 +61,7 @@
                             "name": "Xena",
                             "naissance": "XX.XX.XXXX",
                             "sexe": "femelle",
-                            "gatsbyImageData": "./image/xena.jpg",
+                            "animal_image": "./image/xena.jpg",
                             "petits":   [ 
                                             "Wakan"
                                         ]
@@ -70,7 +70,7 @@
                             "name": "Wakan",
                             "naissance": "18.10.2021",
                             "sexe": "male", 
-                            "gatsbyImageData": "./image/wakan.jpg",
+                            "animal_image": "./image/wakan.jpg",
                             "petits" : []
                         }
         ]

@@ -53,7 +53,7 @@ export const query = graphql`
             name
             naissance
             sexe
-            gatsbyImageData {
+            animal_image {
               childImageSharp {
                 gatsbyImageData
               }
