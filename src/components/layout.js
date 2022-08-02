@@ -5,7 +5,7 @@ import styled from "styled-components";
 import "../styles.css";
 
 const ContentArea = styled.main`
-  height: ${(props) => (props.showMenu === 0 ? "calc(100vh - 175.6px - 40px)" : "calc(100vh - 46px - 40px)")};
+  height: ${(props) => (props.showMenu === 0 ? "calc(100vh - 175.6px - 40px)" : (props.windowSize === 1 ? "calc(100vh - 70px - 40px)" : "calc(100vh - 46px - 40px)"))};
   ::-webkit-scrollbar {
     display: none; /* Chrome Safari */
   }
@@ -151,7 +151,7 @@ const Layout = ({ pageTitle, language, children }) => {
             </PhoneLayout>
           }
       </nav>
-      <ContentArea showMenu={showMenu ? 0 : 1}>
+      <ContentArea showMenu={showMenu ? 0 : 1} windowSize={typeof window !== `undefined` && window.innerWidth > 650 ? 1 : 0}>
         {children}
       </ContentArea>
       <BottomArea>
