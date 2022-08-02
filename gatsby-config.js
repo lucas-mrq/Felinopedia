@@ -3,8 +3,8 @@ module.exports = {
     title: "Felinopedia",
   },
   plugins: [
-    "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
     "gatsby-plugin-image",
     "gatsby-plugin-mdx",
     `gatsby-transformer-json`,
