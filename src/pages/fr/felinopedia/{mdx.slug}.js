@@ -4,6 +4,7 @@ import { graphql } from 'gatsby'
 import styled from "styled-components"
 import AnimalInfo from "../../../components/animalInfo"
 import Annuaire from "../../../components/annuaire"
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 export const query = graphql`
   query($id: String) {
@@ -35,6 +36,31 @@ export const query = graphql`
         ennemis
         temperament
         jsonName
+      }
+    }
+    
+    allDataJson {
+      edges {
+        node {
+          zoo
+          espece
+          image {
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
+          content {
+            name
+            naissance
+            sexe
+            animal_image {
+              childImageSharp {
+                gatsbyImageData
+              }
+            }
+            petits
+          }
+        }
       }
     }
   }
@@ -72,6 +98,12 @@ const AnimalPanel = styled.div`
   border-radius: 10px;
   margin: 5px;
   cursor: pointer;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 `
 
 const ContentArea = styled.main`
@@ -91,52 +123,59 @@ const Flex = styled.div`
   height: 99%;
   width: 100%;
 `
+const Image = styled(GatsbyImage)`
+  margin: 0 20px 10px 20px;
+  border-width: 3px;
+  border-color: #FFCBA5;
+  border-radius: 5px;
+`
+const SmallText = styled.div`
+  font-size: 12px;
+  background-color: #FFCBA5;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #FFCBA5;
+  border-radius: 10px;
+  width: 50%;
+`
 
 const FelinopediaPost = ({ data }) => {
   const [showItems, setShowItems] = useState(true)
   const [selected, setSelected] = useState(null)
-  const animalData = require("../../../../data/" + data.mdx.frontmatter.jsonName + "/" + data.mdx.frontmatter.jsonName + ".json")
+  const animalData = data.mdx.frontmatter
   return (
-    <Layout pageTitle={data.mdx.frontmatter.title} language={"french"}>
+    <Layout pageTitle={animalData.title} language={"french"}>
       <Flex windowSize={typeof window !== `undefined` ? window.innerWidth : 750}>
-        <Panel  onClick={() => typeof window !== `undefined` && window.innerWidth < 730 ? setShowItems(true) :  null} 
+        <Panel onClick={() => typeof window !== `undefined` && window.innerWidth < 730 ? setShowItems(true) :  null} 
                 windowSize={typeof window !== `undefined` ? window.innerWidth : 750}>
           {showItems ? 
-            <AnimalInfo 
-              image={data.mdx.frontmatter.hero_image}
-              image_ref={data.mdx.frontmatter.hero_image_credit_link}
-              animal={data.mdx.frontmatter.animal}
-              scientific_name={data.mdx.frontmatter.scientific_name}
-              map_image={data.mdx.frontmatter.map_image}
-              statut={data.mdx.frontmatter.statut}
-              age={data.mdx.frontmatter.age}
-              gestation={data.mdx.frontmatter.gestation}
-              babys={data.mdx.frontmatter.babys.split(", ")}
-              nouriture={data.mdx.frontmatter.nouriture.split(", ")}
-              ennemis={data.mdx.frontmatter.ennemis.split(", ")}
-              temperament={data.mdx.frontmatter.temperament}
-              jsonName={data.mdx.frontmatter.jsonName}
-            /> 
-          : <Annuaire name={selected.zoo}/>}
+            <AnimalInfo animalData={animalData}/> 
+          : <Annuaire data={selected}/>}
         </Panel>
         {!showItems && typeof window !== `undefined` && window.innerWidth < 730 ?
           null
         : <ContentArea windowSize={typeof window !== `undefined` ? window.innerWidth : 750}>
-            {animalData.map((zoo, index) => {
+            {data.allDataJson.edges.filter((zoo) => zoo.node.espece === animalData.jsonName).map((zoo, index) => {
+              const imageAnimal = getImage(zoo.node.image)
               return (<AnimalPanel
                 key={index}
                 index={index}
                 selected={selected}
                 onClick={() => {
-                  if (showItems || (selected && selected.zoo !== zoo.zoo)){
-                    setSelected(zoo)
+                  if (showItems || (selected && selected.zoo !== zoo.node.zoo)){
+                    setSelected(zoo.node)
                     setShowItems(false)
                   } else {
                     setSelected(null)
                     setShowItems(true)
                   }
                 }}>
-                {zoo.zoo}
+                {zoo.node.zoo}
+                <SmallText>{zoo.node.content.length + " " + zoo.node.espece + (zoo.node.content.length > 1 ? "s" : "")}</SmallText>
+                <Image
+                  image={imageAnimal}
+                  alt="Image d'un animal du zoo"
+                />
               </AnimalPanel>)
             })}
           </ContentArea>}

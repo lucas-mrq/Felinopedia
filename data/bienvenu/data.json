@@ -1,0 +1,78 @@
+[
+    {	
+        "zoo": "Zoo d'Arcachon",
+        "espece": "serval",
+        "image": "./image/zoe.jpg",
+        "content":  [    
+                        {   
+                            "name": "Zoe", 
+                            "naissance": "XX.XX.XXXX", 
+                            "sexe": "femelle",
+                            "animal_image": "./image/zoe.jpg",
+                            "petits":   [ 
+                                            "Cali"
+                                        ]
+                        },
+                        {	
+                            "name": "Tiago", 
+                            "naissance": "XX.XX.XXXX", 
+                            "sexe": "male", 
+                            "animal_image": "./image/tiago.jpg",
+                            "petits":   [   
+                                            "Cali"
+                                        ]
+                        },
+                        {   
+                            "name": "Cali", 
+                            "naissance": "06.07.2021", 
+                            "sexe": "male", 
+                            "animal_image": "./image/cali.jpg",
+                            "petits": []
+                        }
+                    ]
+    },
+    {   
+        "zoo": "Zoo de La Flèche",
+        "espece": "serval",
+        "image": "./image/tara.jpg", 
+        "content":  [    
+                        {   
+                            "name":"Tara", 
+                            "naissance": "29.10.2008", 
+                            "sexe": "femelle",
+                            "animal_image": "./image/tara.jpg",
+                            "petits": []
+                        }, 
+                        {   
+                            "name":"Diego", 
+                            "naissance": "XX.XX.XXXX",
+                            "sexe": "male", 
+                            "animal_image": "./image/diego.jpg",
+                            "petits": []
+                        }
+                    ]
+    },
+    {
+        "zoo": "Parc animalier des Pyrénées",
+        "espece": "serval",
+        "image": "./image/xena.jpg", 
+        "content": [
+                        {
+                            "name": "Xena",
+                            "naissance": "XX.XX.XXXX",
+                            "sexe": "femelle",
+                            "animal_image": "./image/xena.jpg",
+                            "petits":   [ 
+                                            "Wakan"
+                                        ]
+                        },
+                        {
+                            "name": "Wakan",
+                            "naissance": "18.10.2021",
+                            "sexe": "male", 
+                            "animal_image": "./image/wakan.jpg",
+                            "petits" : []
+                        }
+        ]
+    }
+]

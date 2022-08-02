@@ -6,7 +6,7 @@ import "../styles.css";
 const Title = styled.div`
   margin-top: 20px;
   font-size: 26px;
-`;
+`
 const Image = styled(GatsbyImage)`
   margin: 20px;
   border-width: 3px;
@@ -34,7 +34,7 @@ const Soulign = styled.div`
   margin-right: 7px;
 `
 
-const AnimalInfo = ({image, image_ref, animal, scientific_name, map_image, statut, age, gestation, babys, nouriture, ennemis, temperament, children }) => {
+const AnimalInfo = ({animalData, image, children }) => {
   let fontSize
   if (typeof window !== `undefined`) {
     const widthSize = (((window.innerWidth-400)/300)*2)+12
@@ -43,22 +43,22 @@ const AnimalInfo = ({image, image_ref, animal, scientific_name, map_image, statu
   } else {
     fontSize = 12
   }
-  const img = getImage(image)  
+  const img = getImage(animalData.hero_image)  
   return (
     <>
-      <Title>{animal[0].toUpperCase() + animal.substr(1, animal.length)}</Title>
+      <Title>{animalData.animal[0].toUpperCase() + animalData.animal.substr(1, animalData.animal.length)}</Title>
       <Image
-        alt={image_ref}
+        alt={""}
         image={img}
         backgroundColor={"#FFE6B5"}
       />
       <TextArea fontSize={fontSize} 
                 marginTop={typeof window !== `undefined` ? (((window.innerHeight - 400)/300)*4)-4 : 0}>
-        <Text><Soulign>Nom Scientifique:</Soulign>{scientific_name}</Text>
-        <Text><Soulign>Durée de vie:</Soulign>{age}</Text>
-        <Text><Soulign>Gestation:</Soulign>{gestation}</Text>
-        <Text><Soulign>Nombre de petits:</Soulign>{`de ${babys[0]} à ${babys[1]} petits.`}</Text>
-        <Text><Soulign>Temperament:</Soulign>{temperament}</Text>
+        <Text><Soulign>Nom Scientifique:</Soulign>{animalData.scientific_name}</Text>
+        <Text><Soulign>Durée de vie:</Soulign>{animalData.age}</Text>
+        <Text><Soulign>Gestation:</Soulign>{animalData.gestation}</Text>
+        <Text><Soulign>Nombre de petits:</Soulign>{`de ${animalData.babys[0]} à ${animalData.babys[1]} petits.`}</Text>
+        <Text><Soulign>Temperament:</Soulign>{animalData.temperament}</Text>
       </TextArea>
     </>
   );
