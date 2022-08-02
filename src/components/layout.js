@@ -104,7 +104,7 @@ const PhoneLink = styled.div`
 
 const Layout = ({ pageTitle, language, children }) => {
   const [showMenu, setShowMenu] = useState(false)
-  const listMenu = [ ["Acceuil","/"], ["Article", "/fr/press"], ["Felinopedia","/fr/felinopedia"], ["Liste des Zoos","/fr/list"], ["About", "/fr/contact"]]
+  const listMenu = [ ["Acceuil","/"], ["Article", "/fr/press"], ["Felinopedia","/fr/felinopedia"], ["Liste des Zoos","/fr/list"]]
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -139,6 +139,7 @@ const Layout = ({ pageTitle, language, children }) => {
                 <PhoneMenu>
                   <PhoneItem>
                     {listMenu.map((item, index) => <PhoneLink key={index} onClick={() => navigate(item[1])}>{item[0]}</PhoneLink>)}
+                    <PhoneLink onClick={() => navigate("/fr/contact")}>About</PhoneLink>
                   </PhoneItem>
                   <Cursor onClick={() => setShowMenu(false)}>
                     <StaticImage alt="logo" src="../images/menu.png"/>
