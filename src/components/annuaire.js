@@ -54,7 +54,7 @@ const Annuaire = ({ data, children }) => {
       <Title>{data.zoo}</Title>
       <MainPanel>.</MainPanel>
       {data.content.map((animals) => {
-        const img = getImage(animals.animal_image)  
+        const img = getImage(animals.gatsbyImageData)  
         return (
           <SmallPanel>
             <Image
