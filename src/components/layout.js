@@ -5,7 +5,7 @@ import styled from "styled-components";
 import "../styles.css";
 
 const ContentArea = styled.main`
-  height: ${(props) => (props.showMenu === 0 ? "calc(100vh - 175.6px - 40px)" : (props.windowSize === 1 ? "calc(100vh - 70px - 40px)" : "calc(100vh - 46px - 40px)"))};
+  height: ${(props) => (props.showMenu === 0 ? "calc(100vh - 175.6px)" : (props.windowSize === 1 ? "calc(100vh - 70px - 40px)" : "calc(100vh - 46px)"))};
   ::-webkit-scrollbar {
     display: none; /* Chrome Safari */
   }
@@ -104,7 +104,7 @@ const PhoneLink = styled.div`
 
 const Layout = ({ pageTitle, language, children }) => {
   const [showMenu, setShowMenu] = useState(false)
-  const listMenu = [ ["Acceuil","/"], ["Article", "/fr/press"], ["Felinopedia","/fr/felinopedia"], ["Liste des Zoos","/fr/list"]]
+  const listMenu = [ ["Acceuil","/"], ["Article", "/fr/press"], ["Felinopedia","/fr/felinopedia"], ["Liste des Zoos","/fr/list"], ["About", "/fr/contact"]]
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -154,9 +154,11 @@ const Layout = ({ pageTitle, language, children }) => {
       <ContentArea showMenu={showMenu ? 0 : 1} windowSize={typeof window !== `undefined` && window.innerWidth > 650 ? 1 : 0}>
         {children}
       </ContentArea>
-      <BottomArea>
-        <BottomLink to="/fr/contact">About</BottomLink>
-      </BottomArea>
+      {typeof window !== `undefined` && window.innerWidth > 650 ?  
+        <BottomArea>
+          <BottomLink to="/fr/contact">About</BottomLink>
+        </BottomArea>
+        : <></>}
     </>
   );
 };
