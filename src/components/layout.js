@@ -5,7 +5,7 @@ import styled from "styled-components";
 import "../styles.css";
 
 const ContentArea = styled.main`
-  height: 85vh;
+  height: calc(100% - 46px - 25px);
   ::-webkit-scrollbar {
     display: none; /* Chrome Safari */
   }
