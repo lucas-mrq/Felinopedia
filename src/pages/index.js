@@ -9,6 +9,7 @@ const Image = styled.div`
   background-color: #FFCBA5;
   padding: 5px;
   margin-left: 10px;
+  margin-top: 10px;
   max-width: 500px;
 `
 

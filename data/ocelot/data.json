@@ -47,7 +47,7 @@
                             "name":"Diego", 
                             "naissance": "XX.XX.XXXX",
                             "sexe": "male", 
-                            "gatsbyImageData": "./image/diego.jpg",
+                            "animal_image": "./image/diego.jpg",
                             "petits": []
                         }
                     ]

@@ -120,7 +120,14 @@ const Layout = ({ pageTitle, language, children }) => {
       <nav>
         {typeof window !== `undefined` && window.innerWidth > 650 ?  
           <NavLink>
-            {listMenu.map((item, index) => <Button key={index} current={pageTitle===item[0] ? 0 : null} rank={index} onClick={() => navigate(item[1])}><CenterText>{item[0]}</CenterText></Button>)}
+            {listMenu.map((item, index) =>  <Button key={index} 
+                                                    current={pageTitle===item[0] ? 0 : null} 
+                                                    rank={index} 
+                                                    onClick={() => navigate(item[1])}>
+                                                      <CenterText>
+                                                        {item[0]}
+                                                      </CenterText>
+                                            </Button>)}
             <Button title="En développement" flag={5}>
               <Flag>
                 {language==="french" ? <StaticImage alt="french flag" src="../images/french.png"/> : <StaticImage  alt="english flag" src="../images/english.png"/>}
@@ -131,7 +138,7 @@ const Layout = ({ pageTitle, language, children }) => {
               {showMenu ?
                 <PhoneMenu>
                   <PhoneItem>
-                    {listMenu.map((item) => <PhoneLink onClick={() => navigate(item[1])}>{item[0]}</PhoneLink>)}
+                    {listMenu.map((item, index) => <PhoneLink key={index} onClick={() => navigate(item[1])}>{item[0]}</PhoneLink>)}
                   </PhoneItem>
                   <Cursor onClick={() => setShowMenu(false)}>
                     <StaticImage alt="logo" src="../images/menu.png"/>

@@ -53,10 +53,10 @@ const Annuaire = ({ data, children }) => {
     <>
       <Title>{data.zoo}</Title>
       <MainPanel>.</MainPanel>
-      {data.content.map((animals) => {
+      {data.content.map((animals, index) => {
         const img = getImage(animals.animal_image)  
         return (
-          <SmallPanel>
+          <SmallPanel key={index}>
             <Image
               alt={""}
               image={img}
