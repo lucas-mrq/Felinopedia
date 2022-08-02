@@ -19,6 +19,7 @@ const NavLink = styled.ul`
   list-style: none;
   padding: 0;
   width: 100%;
+  margin-top: 16px;
 `;
 const Button = styled.div`
   background-color: ${(props) => (props.current===0 ? `#FFCBA5;` : "#FFE6B5;")}
