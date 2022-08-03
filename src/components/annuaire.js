@@ -43,12 +43,13 @@ const Text = styled.div`
   border-style: solid;
   border-width: ${(props) => props.pos === "top" ? "0" : "1px 0 0 0"};
   border-color: #FFCBA5;
-  padding-top: 1%;
-  padding-bottom: 1%;
+  padding-top: ${(props) => props.windowSize < 400 ? "0%" : "1%"};
+  padding-bottom: ${(props) => props.windowSize < 400 ? "0%" : "1%"};
+  ${(props) => props.windowSize < 400 ? "font-size: 10px" : ""}
 `
 
 const Annuaire = ({ data, children }) => {
-  console.log(data)
+  const windowSize = typeof window !== `undefined` ? window.innerWidth : 750
   return (
     <>
       <Title>{data.zoo}</Title>
@@ -63,10 +64,10 @@ const Annuaire = ({ data, children }) => {
               backgroundColor={"#FFE6B5"}
             />
             <SmallContent>
-              <Text pos={"top"}><Soulign>Nom:</Soulign>{animals.name}</Text>
-              <Text><Soulign>Date de naissance:</Soulign>{animals.naissance}</Text>
-              <Text><Soulign>Sexe:</Soulign>{animals.sexe}</Text>
-              {animals.petits.length > 0 ? <Text><Soulign>Petits:</Soulign>{animals.petits.join(', ')}</Text> : ""}
+              <Text windowSize={windowSize} pos={"top"}><Soulign>Nom:</Soulign>{animals.name}</Text>
+              <Text windowSize={windowSize}><Soulign>Date de naissance:</Soulign>{animals.naissance}</Text>
+              <Text windowSize={windowSize}><Soulign>Sexe:</Soulign>{animals.sexe}</Text>
+              {animals.petits.length > 0 ? <Text windowSize={windowSize}><Soulign>Petits:</Soulign>{animals.petits.join(', ')}</Text> : ""}
             </SmallContent>
           </SmallPanel>
         )
