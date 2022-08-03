@@ -68,6 +68,12 @@ export const query = graphql`
 const Panel = styled.div`
   text-align: center;
   aspect-ratio: 4/5;
+  overflow-y: scroll; 
+  ::-webkit-scrollbar {
+    display: none; /* Chrome Safari */
+  }
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
   width: calc(100% - 20px);
   max-width: 400px;
   min-width: 300px;
@@ -155,7 +161,7 @@ const FelinopediaPost = ({ data }) => {
         {!showItems && typeof window !== `undefined` && window.innerWidth < 730 ?
           null
         : <ContentArea windowSize={typeof window !== `undefined` ? window.innerWidth : 750}>
-            {data.allDataJson.edges.filter((zoo) => zoo.node.espece === animalData.jsonName).map((zoo, index) => {
+            {data.allDataJson.edges.sort(function (a, b) {return a.node.zoo.localeCompare(b.node.zoo)}).filter((zoo) => zoo.node.espece === animalData.jsonName).map((zoo, index) => {
               const imageAnimal = getImage(zoo.node.image)
               return (<AnimalPanel
                 key={index}

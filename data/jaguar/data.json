@@ -11,27 +11,273 @@
                             "sexe": "male",
                             "animal_image": "./image/miguel.jpg",
                             "petits":   [ 
-                                            "Faya"
+                                            "Kumal", "Faya", "5 morts en bas age"
                                         ]
                         },
                         {	
                             "name": "Laeticia", 
                             "pigmentation": "noir",
-                            "naissance": "XX.XX.XXXX", 
-                            "mort": "XX.XX.XXXX", 
+                            "naissance": "XX.XX.XXXX",
                             "sexe": "femelle", 
                             "animal_image": "./image/laeticia.jpg",
                             "petits":   [   
-                                            "Faya"
+                                            "Kumal", "Faya", "5 morts en bas age"
                                         ]
                         },
                         {   
+                            "name": "Kumal", 
+                            "naissance": "24.03.2013",  
+                            "sexe": "male", 
+                            "zoo" : "Paradise Wildlife Park",
+                            "animal_image": "./image/kumal.jpg",
+                            "petits":   []
+                        },
+                        {   
                             "name": "Faya", 
-                            "naissance": "17.04.2017",
+                            "naissance": "17.04.2014",
                             "mort": "XX.XX.XXXX",  
                             "sexe": "femelle", 
                             "zoo" : "Zoo de Martinique",
+                            "animal_image": "./image/faya-petit.jpg",
+                            "petits":   []
+                        }
+                    ]
+    },
+    {	
+        "zoo": "Zoo du Carbet", 
+        "espece": "jaguar",
+        "image": "./image/cabret.jpg",
+        "content":  [    
+                        {   
+                            "name": "Faya", 
+                            "naissance": "17.04.2014",
+                            "sexe": "femelle", 
                             "animal_image": "./image/faya.jpg",
+                            "petits":   [
+                                            "Naya", "Ti'Ponch"
+                                        ]
+                        },
+                        {   
+                            "name": "Ulysse", 
+                            "naissance": "XX.XX.XXXX", 
+                            "sexe": "femelle", 
+                            "animal_image": "./image/ulysse.jpg",
+                            "petits":   [
+                                            "Naya", "Ti'Ponch"
+                                        ]
+                        },
+                        {	
+                            "name": "Naya", 
+                            "pigmentation": "noir",
+                            "naissance": "31.01.2017", 
+                            "sexe": "femelle", 
+                            "animal_image": "./image/naya.jpg",
+                            "petits":   []
+                        },
+                        {	
+                            "name": "Kali", 
+                            "naissance": "23.12.2020", 
+                            "sexe": "male", 
+                            "animal_image": "./image/kali.jpg",
+                            "petits":   []
+                        },
+                        {	
+                            "name": "Ti'Ponch", 
+                            "naissance": "XX.XX.2018", 
+                            "sexe": "male", 
+                            "zoo" : "Parrot World",
+                            "animal_image": "./image/ti-ponch-petit.jpg",
+                            "petits":   []
+                        }
+                    ]
+    },
+    {	
+        "zoo": "Parc Zooloogique de Paris", 
+        "espece": "jaguar",
+        "image": "./image/parc-zooloogique-paris.jpg",
+        "content":  [    
+                        {   
+                            "name": "Simara", 
+                            "naissance": "07.06.2013",
+                            "sexe": "femelle", 
+                            "animal_image": "./image/simara.jpg",
+                            "petits":   [
+                                            "Lenca", "Aloha"
+                                        ]
+                        },
+                        {   
+                            "name": "Aramis ", 
+                            "pigmentation": "noir",
+                            "naissance": "11.12.2009", 
+                            "sexe": "femelle", 
+                            "animal_image": "./image/aramis.jpg",
+                            "petits":   [
+                                            "Lenca", "Aloha"
+                                        ]
+                        },
+                        {	
+                            "name": "Lenca", 
+                            "pigmentation": "noir",
+                            "naissance": "07.07.2018", 
+                            "sexe": "femelle", 
+                            "animal_image": "./image/lenca.jpg",
+                            "petits":   []
+                        },
+                        {	
+                            "name": "Aloha", 
+                            "naissance": "07.07.2018", 
+                            "sexe": "male", 
+                            "animal_image": "./image/aloha.jpg",
+                            "petits":   []
+                        }
+                    ]
+    },
+    {	
+        "zoo": "Parrot World", 
+        "espece": "jaguar",
+        "image": "./image/parrot-world.jpg",
+        "content":  [    
+                        {   
+                            "name": "Emma ", 
+                            "pigmentation": "noir",
+                            "naissance": "XX.XX.XXXX", 
+                            "sexe": "femelle", 
+                            "animal_image": "./image/emma.jpg",
+                            "petits":   [
+                                            "Akabo", "Baalam"
+                                        ]
+                        },
+                        {	
+                            "name": "Ti'Ponch", 
+                            "naissance": "XX.XX.2018", 
+                            "sexe": "male", 
+                            "animal_image": "./image/ti-ponch.jpg",
+                            "petits":   [
+                                            "Akabo", "Baalam"
+                                        ]
+                        },
+                        {	
+                            "name": "Akabo", 
+                            "naissance": "01.04.2022", 
+                            "sexe": "male", 
+                            "animal_image": "./image/akabo.jpg",
+                            "petits":   []
+                        },
+                        {	
+                            "name": "Baalam", 
+                            "pigmentation": "noir",
+                            "naissance": "01.04.2022", 
+                            "sexe": "male", 
+                            "animal_image": "./image/baalam.jpg",
+                            "petits":   []
+                        }
+                    ]
+    },
+    {	
+        "zoo": "Parc des Félins", 
+        "espece": "jaguar",
+        "image": "./image/parc-felins.jpg",
+        "content":  [    
+                        {   
+                            "name": "Leila", 
+                            "pigmentation": "noir",
+                            "naissance": "XX.XX.XXXX", 
+                            "sexe": "femelle", 
+                            "animal_image": "./image/leila.jpg",
+                            "petits":   [
+                                            "Lumé", "Limbani" 
+                                        ]
+                        },
+                        {	
+                            "name": "Teo", 
+                            "pigmentation": "noir",
+                            "naissance": "XX.XX.XXXX", 
+                            "sexe": "male", 
+                            "animal_image": "./image/teo.jpg",
+                            "petits":   [
+                                            "Lumé", "Limbani" 
+                                        ]
+                        },
+                        {	
+                            "name": "Lumé", 
+                            "pigmentation": "noir",
+                            "naissance": "XX.08.2021", 
+                            "sexe": "male", 
+                            "animal_image": "./image/lume-limbani.jpg",
+                            "petits":   []
+                        },
+                        {	
+                            "name": "Limbani", 
+                            "pigmentation": "noir",
+                            "naissance": "XX.08.2021", 
+                            "sexe": "male", 
+                            "animal_image": "./image/lume-limbani.jpg",
+                            "petits":   []
+                        }
+                    ]
+    },
+    {	
+        "zoo": "Zoo de Bordeaux-Pessac", 
+        "espece": "jaguar",
+        "image": "./image/zoo-bordeaux.jpg",
+        "content":  [    
+                        {   
+                            "name": "Catalina", 
+                            "naissance": "XX.XX.2015", 
+                            "sexe": "femelle", 
+                            "animal_image": "./image/catalina.jpg",
+                            "petits":   []
+                        },
+                        {	
+                            "name": "Mato", 
+                            "naissance": "XX.XX.2016", 
+                            "sexe": "male", 
+                            "animal_image": "./image/mato.jpg",
+                            "petits":   []
+                        }
+                    ]
+    },
+    {	
+        "zoo": "Zoo d’Amnéville", 
+        "espece": "jaguar",
+        "image": "./image/ria.jpg",
+        "content":  [    
+                        {   
+                            "name": "Ria", 
+                            "naissance": "26.12.2015", 
+                            "pigmentation": "noir",
+                            "sexe": "femelle", 
+                            "animal_image": "./image/ria.jpg",
+                            "petits":   []
+                        },
+                        {	
+                            "name": "Buzzi", 
+                            "naissance": "XX.XX.2005", 
+                            "mort": "01.03.2022", 
+                            "sexe": "male", 
+                            "animal_image": "./image/buzzy.jpg",
+                            "petits":   []
+                        }
+                    ]
+    },
+    {	
+        "zoo": "Domaine des Fauves", 
+        "espece": "jaguar",
+        "image": "./image/domaine-fauve.jpg",
+        "content":  [    
+                        {   
+                            "name": "Ox", 
+                            "naissance": "XX.XX.XXXX", 
+                            "sexe": "male", 
+                            "animal_image": "./image/domaine-fauve.jpg",
+                            "petits":   []
+                        },
+                        {	
+                            "name": "Ida", 
+                            "pigmentation": "noir",
+                            "naissance": "XX.XX.XXXX", 
+                            "sexe": "male", 
+                            "animal_image": "./image/domaine-fauve.jpg",
                             "petits":   []
                         }
                     ]
