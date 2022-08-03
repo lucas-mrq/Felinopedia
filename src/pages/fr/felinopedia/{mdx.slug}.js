@@ -67,7 +67,7 @@ export const query = graphql`
 `
 const Panel = styled.div`
   text-align: center;
-  height: 96%; 
+  aspect-ratio: 4/5; 
   width: calc(100% - 20px);
   max-width: 400px;
   min-width: 300px;
