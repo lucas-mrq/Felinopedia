@@ -1,0 +1,39 @@
+[
+    {	
+        "zoo": "Zoo de Beauval", 
+        "espece": "jaguar",
+        "image": "./image/beauval.jpg",
+        "content":  [    
+                        {   
+                            "name": "Miguel", 
+                            "naissance": "27.10.2005", 
+                            "mort": "XX.XX.XXXX", 
+                            "sexe": "male",
+                            "animal_image": "./image/miguel.jpg",
+                            "petits":   [ 
+                                            "Faya"
+                                        ]
+                        },
+                        {	
+                            "name": "Laeticia", 
+                            "pigmentation": "noir",
+                            "naissance": "XX.XX.XXXX", 
+                            "mort": "XX.XX.XXXX", 
+                            "sexe": "femelle", 
+                            "animal_image": "./image/laeticia.jpg",
+                            "petits":   [   
+                                            "Faya"
+                                        ]
+                        },
+                        {   
+                            "name": "Faya", 
+                            "naissance": "17.04.2017",
+                            "mort": "XX.XX.XXXX",  
+                            "sexe": "femelle", 
+                            "zoo" : "Zoo de Martinique",
+                            "animal_image": "./image/faya.jpg",
+                            "petits":   []
+                        }
+                    ]
+    }
+]

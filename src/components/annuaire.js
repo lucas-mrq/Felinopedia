@@ -32,6 +32,7 @@ const Image = styled(GatsbyImage)`
 const Soulign = styled.div`
   text-decoration: underline;
   margin-right: 7px;
+  margin-left: 25px;
 `
 const SmallContent = styled.div`
   width: 70%;
@@ -40,10 +41,12 @@ const SmallContent = styled.div`
 const Text = styled.div`
   display: flex;
   justify-content: center;
+  margin-right: 25px;
   border-style: solid;
   border-width: ${(props) => props.pos === "top" ? "0" : "1px 0 0 0"};
   border-color: #FFCBA5;
   padding-top: ${(props) => props.windowSize < 400 ? "0%" : "1%"};
+  width: 100%;
   padding-bottom: ${(props) => props.windowSize < 400 ? "0%" : "1%"};
   ${(props) => props.windowSize < 400 ? "font-size: 10px" : ""}
 `
@@ -64,9 +67,13 @@ const Annuaire = ({ data, children }) => {
               backgroundColor={"#FFE6B5"}
             />
             <SmallContent>
-              <Text windowSize={windowSize} pos={"top"}><Soulign>Nom:</Soulign>{animals.name}</Text>
+              <Text windowSize={windowSize} pos={"top"}>
+                <Soulign>Nom:</Soulign>
+                {animals.name}
+                <Soulign>Sexe:</Soulign>
+                {animals.sexe}
+              </Text>
               <Text windowSize={windowSize}><Soulign>Date de naissance:</Soulign>{animals.naissance}</Text>
-              <Text windowSize={windowSize}><Soulign>Sexe:</Soulign>{animals.sexe}</Text>
               {animals.petits.length > 0 ? <Text windowSize={windowSize}><Soulign>Petits:</Soulign>{animals.petits.join(', ')}</Text> : ""}
             </SmallContent>
           </SmallPanel>

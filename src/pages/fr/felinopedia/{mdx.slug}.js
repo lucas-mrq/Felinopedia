@@ -67,7 +67,7 @@ export const query = graphql`
 `
 const Panel = styled.div`
   text-align: center;
-  aspect-ratio: 4/5; 
+  aspect-ratio: 4/5;
   width: calc(100% - 20px);
   max-width: 400px;
   min-width: 300px;
@@ -78,13 +78,12 @@ const Panel = styled.div`
   border-width: 3px;
   border-color: #FFCBA5;
   border-radius: 10px;
-  margin-top: 10px; 
+  margin-top: 10px;
   margin-right: ${(props) => props.windowSize > 730 ? "10px" : "auto"};
   margin-left: ${(props) => props.windowSize > 730 ? "10px" : "auto"};
   margin-bottom: 5px;
-  ${(props) => props.windowSize < 730 ? "cursor: pointer;" : ""}
+  ${(props) => props.windowSize < 730 && props.showItems === 1 ? "cursor: pointer;" : ""}
 `
-
 const AnimalPanel = styled.div`
   height: 188px; 
   width: 188px;
@@ -146,8 +145,9 @@ const FelinopediaPost = ({ data }) => {
   return (
     <Layout pageTitle={animalData.title} language={"french"}>
       <Flex windowSize={typeof window !== `undefined` ? window.innerWidth : 750}>
-        <Panel onClick={() => typeof window !== `undefined` && window.innerWidth < 730 ? setShowItems(true) :  null} 
-                windowSize={typeof window !== `undefined` ? window.innerWidth : 750}>
+        <Panel  onClick={() => typeof window !== `undefined` && window.innerWidth < 730 ? setShowItems(true) :  null} 
+                windowSize={typeof window !== `undefined` ? window.innerWidth : 750}
+                showItems={showItems ? 0 : 1}>
           {showItems ? 
             <AnimalInfo animalData={animalData}/> 
           : <Annuaire data={selected}/>}
