@@ -5,7 +5,7 @@ import styled from "styled-components";
 import "../styles.css";
 
 const ContentArea = styled.main`
-  height: ${(props) => (props.showMenu === 0 ? "calc(100vh - 175.6px)" : (props.windowSize === 1 ? "calc(100vh - 70px - 40px)" : "calc(100vh - 46px)"))};
+  height: ${(props) => (props.showMenu === 0 ? "calc(100vh - 175.6px)" : (props.windowSize === 1 ? "calc(100vh - 70px - 40px)" : "calc(100vh - 70px - 40px)"))};
   ::-webkit-scrollbar {
     display: none; /* Chrome Safari */
   }
