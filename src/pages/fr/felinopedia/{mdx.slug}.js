@@ -144,6 +144,19 @@ const SmallText = styled.div`
   width: 50%;
 `
 
+const espece = (name) => {
+  let shortName = ""
+  let max = false
+  for( let i = 0 ; i < name.length; i++ ){
+    if( !(max) && name[i] !== "-"){
+      shortName += name[i]
+    } else {
+      max = true
+    }
+  }
+  return shortName
+}
+
 const FelinopediaPost = ({ data }) => {
   const [showItems, setShowItems] = useState(true)
   const [selected, setSelected] = useState(null)
@@ -177,7 +190,7 @@ const FelinopediaPost = ({ data }) => {
                   }
                 }}>
                 {zoo.node.zoo}
-                <SmallText>{zoo.node.content.length + " " + zoo.node.espece + (zoo.node.content.length > 1 ? "s" : "")}</SmallText>
+                <SmallText>{zoo.node.content.length + " " + espece(zoo.node.espece) + (zoo.node.content.length > 1 ? "s" : "")}</SmallText>
                 <Image
                   image={imageAnimal}
                   alt="Image d'un animal du zoo"
