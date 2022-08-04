@@ -15,7 +15,7 @@ const Image = styled(GatsbyImage)`
   height: 50%;
 `
 const TextArea = styled.div`
-  height: 35%;
+  height: calc(49% - 26px - 60px);
   width: 100%;
   font-size: ${(props) => props.fontSize}px;
   margin-top: ${(props) => props.marginTop}%;

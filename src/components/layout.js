@@ -88,6 +88,9 @@ const PhoneMenu = styled.div`
 `
 const Cursor = styled.div`
   cursor: pointer;
+  margin-top: 10px;
+  margin-right: 15px;
+  font-size: 20px;
 `
 const PhoneItem = styled.div`
   width: 100%;
@@ -101,6 +104,10 @@ const PhoneItem = styled.div`
 const PhoneLink = styled.div`
   cursor: pointer;
   padding: 10px 50px 10px 50px;
+`
+const Font = styled.div`
+  font-size: 14px;
+  margin-top: 10px;
 `
 
 const Layout = ({ pageTitle, language, children }) => {
@@ -143,12 +150,12 @@ const Layout = ({ pageTitle, language, children }) => {
                     <PhoneLink onClick={() => navigate("/fr/contact")}>About</PhoneLink>
                   </PhoneItem>
                   <Cursor onClick={() => setShowMenu(false)}>
-                    <StaticImage alt="logo" src="../images/menu.png"/>
+                    X
                   </Cursor>
                 </PhoneMenu>
-                : <><StaticImage alt="logo" src="../images/felinopedia-icon.png" width={46} height={46}/>
+                : <><StaticImage alt="logo" src="../images/felinopedia.png" width={46} height={46}/>
                     <Button flag={5} onClick={() => setShowMenu(true)}>
-                    <StaticImage alt="logo" src="../images/menu.png"/>
+                      <Font>Menu</Font>
                   </Button></>}
             </PhoneLayout>
           }
