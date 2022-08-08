@@ -281,5 +281,11 @@
                             "petits":   []
                         }
                     ]
+    },
+    {	
+        "zoo": "Zoo African Safari", 
+        "espece": "jaguar",
+        "image": "./image/african.jpg",
+        "content":  []
     }
 ]

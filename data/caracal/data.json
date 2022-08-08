@@ -1,0 +1,38 @@
+[
+    {	
+        "zoo": "Parc des félins", 
+        "espece": "caracal",
+        "image": "./image/parc-felins.jpg",
+        "content":  [    
+                        {   
+                            "name": "Ida", 
+                            "naissance": "XX.XX.XXXX",
+                            "mort": "XX.XX.XXXX", 
+                            "sexe": "femelle",
+                            "animal_image": "./image/no-photo.jpg",
+                            "petits":   [ 
+                                            "Anaya"
+                                        ]
+                        },
+                        {   
+                            "name": "Anaya", 
+                            "naissance": "XX.01.2019",  
+                            "sexe": "femelle", 
+                            "animal_image": "./image/no-photo.jpg",
+                            "petits":   []
+                        }
+                    ]
+    },
+    {	
+        "zoo": "Domaine des Fauves", 
+        "espece": "caracal",
+        "image": "./image/domaine.jpg",
+        "content":  []
+    },
+    {	
+        "zoo": "Zoo d'Amnéville", 
+        "espece": "caracal",
+        "image": "./image/amneville.jpg",
+        "content":  []
+    }
+]

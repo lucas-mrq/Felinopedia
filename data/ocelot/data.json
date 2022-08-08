@@ -94,7 +94,8 @@
                         {   
                             "name":"Paprika", 
                             "naissance": "30.07.2018",
-                            "sexe": "femelle", 
+                            "sexe": "femelle",
+                            "zoo": "Parc de l'Auxois",
                             "animal_image": "./image/paprika-petit.jpg",
                             "petits": []
                         },
@@ -226,6 +227,76 @@
                             "naissance": "XX.XX.2017",
                             "sexe": "male", 
                             "animal_image": "./image/petit-fleche-2.jpg",
+                            "petits": []
+                        }
+                    ]
+    },
+    {   
+        "zoo": "Zoo de Saint-Martin la Plaine",
+        "image": "./image/saint-martin.jpg", 
+        "espece": "ocelot",
+        "content":  []
+    },
+    {   
+        "zoo": "Domaine de Pescheray",
+        "image": "./image/pescheray.jpg", 
+        "espece": "ocelot",
+        "content":  []
+    },
+    {   
+        "zoo": "Parc de Sanary-sur-Mer",
+        "image": "./image/sanary.jpg", 
+        "espece": "ocelot",
+        "content":  []
+    },
+    {   
+        "zoo": "Parc des Félins",
+        "image": "./image/parc-felins.jpg", 
+        "espece": "ocelot",
+        "content":  []
+    },
+    {   
+        "zoo": "Parc de l'Auxois",
+        "image": "./image/parc-felins.jpg", 
+        "espece": "ocelot",
+        "content":  [    
+                        {   
+                            "name":"Paprika", 
+                            "naissance": "30.07.2018",
+                            "sexe": "femelle",
+                            "animal_image": "./image/paprika.jpg",
+                            "petits":   [
+                                            "XX"
+                                        ]
+                        },
+                        {   
+                            "name":"XX", 
+                            "naissance": "XX.XX.XXXX", 
+                            "sexe": "X",
+                            "animal_image": "./image/paprika-bebe.jpg",
+                            "petits": []
+                        }
+                    ]
+    },
+    {   
+        "zoo": "Parc de l'Auxois",
+        "image": "./image/paprika.jpg", 
+        "espece": "ocelot",
+        "content":  [    
+                        {   
+                            "name":"Paprika", 
+                            "naissance": "XX.XX.XXXX", 
+                            "sexe": "femelle",
+                            "animal_image": "./image/paprika.jpg",
+                            "petits":   [
+                                            "XX"
+                                        ]
+                        },
+                        {   
+                            "name":"XX", 
+                            "naissance": "XX.XX.XXXX", 
+                            "sexe": "X",
+                            "animal_image": "./image/paprika-bebe.jpg",
                             "petits": []
                         }
                     ]
