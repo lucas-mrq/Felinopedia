@@ -53,6 +53,8 @@ export const query = graphql`
             name
             naissance
             sexe
+            zoo
+            mort
             animal_image {
               childImageSharp {
                 gatsbyImageData
@@ -102,7 +104,7 @@ const AnimalPanel = styled.div`
   border-color: #FFCBA5;
   border-radius: 10px;
   margin: 5px;
-  cursor: pointer;
+  cursor: ${(props) => props.cursor === 0 ? "not-allowed" : "pointer"};
   text-align: center;
   display: flex;
   flex-wrap: wrap;
@@ -180,17 +182,23 @@ const FelinopediaPost = ({ data }) => {
                 key={index}
                 index={index}
                 selected={selected}
+                cursor={zoo.node.content.length}
                 onClick={() => {
-                  if (showItems || (selected && selected.zoo !== zoo.node.zoo)){
-                    setSelected(zoo.node)
-                    setShowItems(false)
-                  } else {
-                    setSelected(null)
-                    setShowItems(true)
-                  }
-                }}>
+                  if (zoo.node.content.length !== 0){
+                    if (showItems || (selected && selected.zoo !== zoo.node.zoo)){
+                      setSelected(zoo.node)
+                      setShowItems(false)
+                    } else {
+                      setSelected(null)
+                      setShowItems(true)
+                    }
+                }}}>
                 {zoo.node.zoo}
-                <SmallText>{zoo.node.content.length + " " + espece(zoo.node.espece) + (zoo.node.content.length > 1 ? "s" : "")}</SmallText>
+                <SmallText>
+                  {zoo.node.content.filter((content) => (!(content.mort) && !(content.zoo))).length !==0 ? 
+                    zoo.node.content.filter((content) => (!(content.mort) && !(content.zoo))).length + " " + espece(zoo.node.espece) + (zoo.node.content.length > 1 ? "s" : "") 
+                    : "0 infos"}
+                </SmallText>
                 <Image
                   image={imageAnimal}
                   alt="Image d'un animal du zoo"

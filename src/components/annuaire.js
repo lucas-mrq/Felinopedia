@@ -20,6 +20,8 @@ const SmallPanel = styled.div`
   border-color: #2E8A56;
   display: flex;
   align-items: center;
+  background-color: ${(props) => props.background};
+
 `
 const Image = styled(GatsbyImage)`
   margin: 1%;
@@ -40,11 +42,12 @@ const SmallContent = styled.div`
 `
 const Text = styled.div`
   display: flex;
+  color: ${(props) => props.color};
   justify-content: center;
   margin-right: 25px;
   border-style: solid;
   border-width: ${(props) => props.pos === "top" ? "0" : "1px 0 0 0"};
-  border-color: #FFCBA5;
+  border-color: ${(props) => props.color};
   padding-top: ${(props) => props.windowSize < 400 ? "0%" : "1%"};
   width: 100%;
   padding-bottom: ${(props) => props.windowSize < 400 ? "0%" : "1%"};
@@ -58,23 +61,42 @@ const Annuaire = ({ data, children }) => {
       <Title>{data.zoo}</Title>
       <MainPanel>.</MainPanel>
       {data.content.map((animals, index) => {
+        const darkColor = animals.zoo ? "#083D56" : (animals.mort ? "#5B5B5B" : "#1C6E55")
         const img = getImage(animals.animal_image)  
         return (
-          <SmallPanel key={index}>
+          <SmallPanel key={index} background={animals.zoo ? "#E3F1FF" : (animals.mort ? "#D3CCC5" : "#D9EAD3")}>
             <Image
               alt={""}
               image={img}
               backgroundColor={"#FFE6B5"}
             />
             <SmallContent>
-              <Text windowSize={windowSize} pos={"top"}>
+              <Text windowSize={windowSize} pos={"top"} color={darkColor}>
                 <Soulign>Nom:</Soulign>
                 {animals.name}
                 <Soulign>Sexe:</Soulign>
                 {animals.sexe}
               </Text>
-              <Text windowSize={windowSize}><Soulign>Date de naissance:</Soulign>{animals.naissance}</Text>
-              {animals.petits.length > 0 ? <Text windowSize={windowSize}><Soulign>Petits:</Soulign>{animals.petits.join(', ')}</Text> : ""}
+              {animals.mort ? 
+                <Text windowSize={windowSize} color={darkColor}>
+                  <Soulign>Vie:</Soulign>
+                  {animals.naissance + " - " + animals.mort}
+                </Text>
+                : <Text windowSize={windowSize} color={darkColor}>
+                  <Soulign>Date de naissance:</Soulign>
+                  {animals.naissance}
+                </Text>}
+              {animals.zoo ? 
+                <Text windowSize={windowSize} color={darkColor}>
+                  <Soulign>Nouveau zoo:</Soulign>
+                  {animals.zoo}
+                  </Text>
+                : (animals.petits.length > 0 ? 
+                  <Text windowSize={windowSize} color={darkColor}>
+                    <Soulign>Petits:</Soulign>
+                    {animals.petits.join(', ')}
+                  </Text> 
+                  : "")}
             </SmallContent>
           </SmallPanel>
         )

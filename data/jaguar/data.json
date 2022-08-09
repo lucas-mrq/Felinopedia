@@ -7,7 +7,6 @@
                         {   
                             "name": "Miguel", 
                             "naissance": "27.10.2005", 
-                            "mort": "XX.XX.XXXX", 
                             "sexe": "male",
                             "animal_image": "./image/miguel.jpg",
                             "petits":   [ 
@@ -35,7 +34,6 @@
                         {   
                             "name": "Faya", 
                             "naissance": "17.04.2014",
-                            "mort": "XX.XX.XXXX",  
                             "sexe": "femelle", 
                             "zoo" : "Zoo de Martinique",
                             "animal_image": "./image/faya-petit.jpg",

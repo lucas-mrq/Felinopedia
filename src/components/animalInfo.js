@@ -36,6 +36,7 @@ const Soulign = styled.div`
 
 const AnimalInfo = ({animalData, image, children }) => {
   let fontSize
+  const animalBaby = animalData.babys.split(", ")
   if (typeof window !== `undefined`) {
     const widthSize = (((window.innerWidth-400)/300)*2)+12
     const heigthSize = (((window.innerHeight - 400)/300)*6)+8
@@ -57,7 +58,7 @@ const AnimalInfo = ({animalData, image, children }) => {
         <Text><Soulign>Nom Scientifique:</Soulign>{animalData.scientific_name}</Text>
         <Text><Soulign>Durée de vie:</Soulign>{animalData.age}</Text>
         <Text><Soulign>Gestation:</Soulign>{animalData.gestation}</Text>
-        <Text><Soulign>Nombre de petits:</Soulign>{`de ${animalData.babys[0]} à ${animalData.babys[1]} petits.`}</Text>
+        <Text><Soulign>Nombre de petits:</Soulign>{`de ${animalBaby[0]} à ${animalBaby[1]} petits.`}</Text>
         <Text><Soulign>Temperament:</Soulign>{animalData.temperament}</Text>
       </TextArea>
     </>
