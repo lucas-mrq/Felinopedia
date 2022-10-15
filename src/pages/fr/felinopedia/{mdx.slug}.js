@@ -162,6 +162,7 @@ const espece = (name) => {
 const FelinopediaPost = ({ data }) => {
   const [showItems, setShowItems] = useState(true)
   const [selected, setSelected] = useState(null)
+  console.log(data)
   const animalData = data.mdx.frontmatter
   return (
     <Layout pageTitle={animalData.title} language={"french"}>
