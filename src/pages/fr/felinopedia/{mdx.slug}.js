@@ -198,9 +198,9 @@ const FelinopediaPost = ({ data }) => {
                 }}}>
                 {zoo.node.zoo}
                 <SmallText>
-                  {zoo.node.content.filter((content) => (!(content.mort) && !(content.zoo))).length !==0 ? 
+                  {zoo.node.content ? (zoo.node.content.filter((content) => (!(content.mort) && !(content.zoo))).length !==0 ? 
                     zoo.node.content.filter((content) => (!(content.mort) && !(content.zoo))).length + " " + espece(zoo.node.espece) + (zoo.node.content.length > 1 ? "s" : "") 
-                    : "0 infos"}
+                    : "0 infos") : null}
                 </SmallText>
                 <Image
                   image={imageAnimal}
