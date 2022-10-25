@@ -183,7 +183,7 @@ const FelinopediaPost = ({ data }) => {
                 key={index}
                 index={index}
                 selected={selected}
-                cursor={zoo.node.content.length}
+                cursor={zoo.node.content ? zoo.node.content.length : 0}
                 onClick={() => {
                   if (zoo.node.content.length !== 0){
                     if (showItems || (selected && selected.zoo !== zoo.node.zoo)){
