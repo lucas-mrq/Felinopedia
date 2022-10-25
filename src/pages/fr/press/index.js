@@ -11,16 +11,6 @@ const Flex = styled.div`
 `
 
 const Article = ({ data }) => {
-  function convTexte(txt) {
-    console.log(txt)
-    const tab = txt.split(" ")
-    let texte = ""
-    for(let i = 1; i < tab.length; i++){
-      texte += tab[i]
-      texte += " "
-    }
-    return texte;
-  }
   return (
     <Layout pageTitle="Article" language={"french"}>
       <Flex>{data.allMdx.nodes.map((node) => node.frontmatter.title==="Bienvenu" ?
@@ -31,7 +21,7 @@ const Article = ({ data }) => {
                           img={[node.frontmatter.hero_image, node.frontmatter.hero_image_alt]}/>
           : ( node.frontmatter.title[0]==="A" ? 
               <ArticlePanel key={node.id} 
-                              title={convTexte(node.frontmatter.title)} 
+                              title={node.frontmatter.title} 
                               link={`/fr/press/${node.slug}`} 
                               date={node.frontmatter.date} 
                               img={[node.frontmatter.hero_image, node.frontmatter.hero_image_alt]}/>

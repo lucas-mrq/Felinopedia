@@ -16,14 +16,6 @@ const Image = styled.div`
   margin-top: 10px;
   max-width: 500px;
 `
-const Main = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-evenly;
-`
-
 export const query = graphql`
   query {
     allMdx(sort: {fields: frontmatter___date, order: DESC}) {
@@ -64,14 +56,11 @@ const IndexPage = ({ data }) => {
   }
   return (
     <Layout pageTitle="Acceuil" language="french">
-      <Main>
-        <Image>
-          <StaticImage alt="french flag" src="../../data/bienvenu/welcome.jpg"/>
-        </Image>
-
-        <Facebook data={FacebookData}/>
-        <Insta data={FacebookData}/>
-      </Main>
+      <Image>
+        <StaticImage alt="french flag" src="../../data/bienvenu/welcome.jpg"/>
+      </Image>
+      <Facebook data={FacebookData}/>
+      <Insta data={FacebookData}/>
     </Layout>
   )
 }

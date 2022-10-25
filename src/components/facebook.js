@@ -23,7 +23,6 @@ const TextArea = styled.div`
 const ImageArea = styled(GatsbyImage)`
   width: 301px;
   height: 158px;
-  margin-left: -0.5px;
 `
 const BottomArea = styled.div`
   width: calc(100% - 20px);
