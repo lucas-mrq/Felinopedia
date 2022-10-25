@@ -185,9 +185,9 @@ const FelinopediaPost = ({ data }) => {
                 key={index}
                 index={index}
                 selected={selected}
-                cursor={zoo.node.content.length}
+                cursor={zoo.node.content ? zoo.node.content.length : 0}
                 onClick={() => {
-                  if (zoo.node.content.length !== 0){
+                  if (zoo.node.content ? zoo.node.content.length !== 0 : false){
                     if (showItems || (selected && selected.zoo !== zoo.node.zoo)){
                       setSelected(zoo.node)
                       setShowItems(false)
