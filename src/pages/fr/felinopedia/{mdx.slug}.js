@@ -179,7 +179,8 @@ const FelinopediaPost = ({ data }) => {
         : <ContentArea windowSize={typeof window !== `undefined` ? window.innerWidth : 750}>
             {data.allDataJson.edges.sort(function (a, b) {return a.node.zoo.localeCompare(b.node.zoo)}).filter((zoo) => zoo.node.espece === animalData.jsonName).map((zoo, index) => {
               const imageAnimal = getImage(zoo.node.image)
-              console.log('Ici: ')
+              console.log("ici: ")
+              console.log(zoo.node.content ? zoo.node.content.length : 0)
               return (<AnimalPanel
                 key={index}
                 index={index}
