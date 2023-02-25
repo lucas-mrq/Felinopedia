@@ -180,7 +180,7 @@ const FelinopediaPost = ({ data }) => {
             {data.allDataJson.edges.sort(function (a, b) {return a.node.zoo.localeCompare(b.node.zoo)}).filter((zoo) => zoo.node.espece === animalData.jsonName).map((zoo, index) => {
               const imageAnimal = getImage(zoo.node.image)
               const zooLength = zoo.node.content ? zoo.node.content.length : 0
-              const alifeAnimals = zoo.node.content.filter((content) => (!(content.mort) && !(content.zoo)))
+              const alifeAnimals = zoo.node.content ? zoo.node.content.filter((content) => (!(content.mort) && !(content.zoo))) : null
               return (<AnimalPanel
                 key={index}
                 index={index}
