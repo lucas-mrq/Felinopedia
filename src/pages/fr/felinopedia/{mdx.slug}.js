@@ -179,13 +179,14 @@ const FelinopediaPost = ({ data }) => {
         : <ContentArea windowSize={typeof window !== `undefined` ? window.innerWidth : 750}>
             {data.allDataJson.edges.sort(function (a, b) {return a.node.zoo.localeCompare(b.node.zoo)}).filter((zoo) => zoo.node.espece === animalData.jsonName).map((zoo, index) => {
               const imageAnimal = getImage(zoo.node.image)
+              const zooLength = zoo.node.content ? zoo.node.content.length : 0
               return (<AnimalPanel
                 key={index}
                 index={index}
                 selected={selected}
-                cursor={zoo.node.content.length}
+                cursor={zooLength}
                 onClick={() => {
-                  if (zoo.node.content.length !== 0){
+                  if (zooLength !== 0){
                     if (showItems || (selected && selected.zoo !== zoo.node.zoo)){
                       setSelected(zoo.node)
                       setShowItems(false)
