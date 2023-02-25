@@ -18,7 +18,7 @@ const MapArea = styled.div`
 `
 const Image = styled.div`
   position:relative;
-  z-index: 1;
+  z-index: 1;  
   width: 450px;
   height: 484.51x;
 `

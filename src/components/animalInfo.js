@@ -36,7 +36,7 @@ const Soulign = styled.div`
 
 const AnimalInfo = ({animalData, image, children }) => {
   let fontSize
-  const animalBaby = animalData.babys ? animalData.babys.split(", ") : ["X", "X"]
+  const animalBaby = animalData.babys.split(", ")
   if (typeof window !== `undefined`) {
     const widthSize = (((window.innerWidth-400)/300)*2)+12
     const heigthSize = (((window.innerHeight - 400)/300)*6)+8

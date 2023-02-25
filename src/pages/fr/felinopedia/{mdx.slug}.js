@@ -179,15 +179,13 @@ const FelinopediaPost = ({ data }) => {
         : <ContentArea windowSize={typeof window !== `undefined` ? window.innerWidth : 750}>
             {data.allDataJson.edges.sort(function (a, b) {return a.node.zoo.localeCompare(b.node.zoo)}).filter((zoo) => zoo.node.espece === animalData.jsonName).map((zoo, index) => {
               const imageAnimal = getImage(zoo.node.image)
-              const zooLength = zoo.node.content ? zoo.node.content.length : 0
-              const alifeAnimals = zoo.node.content ? zoo.node.content.filter((content) => (!(content.mort) && !(content.zoo))) : null
               return (<AnimalPanel
                 key={index}
                 index={index}
                 selected={selected}
-                cursor={zooLength}
+                cursor={zoo.node.content.length}
                 onClick={() => {
-                  if (zooLength !== 0){
+                  if (zoo.node.content.length !== 0){
                     if (showItems || (selected && selected.zoo !== zoo.node.zoo)){
                       setSelected(zoo.node)
                       setShowItems(false)
@@ -198,8 +196,8 @@ const FelinopediaPost = ({ data }) => {
                 }}}>
                 {zoo.node.zoo}
                 <SmallText>
-                  {(alifeAnimals ? alifeAnimals.length !==0 : false) ? 
-                    alifeAnimals.length + " " + espece(zoo.node.espece) + ((zoo.node.content ? zoo.node.content.length : 0) > 1 ? "s" : "") 
+                  {zoo.node.content.filter((content) => (!(content.mort) && !(content.zoo))).length !==0 ? 
+                    zoo.node.content.filter((content) => (!(content.mort) && !(content.zoo))).length + " " + espece(zoo.node.espece) + (zoo.node.content.length > 1 ? "s" : "") 
                     : "0 infos"}
                 </SmallText>
                 <Image
