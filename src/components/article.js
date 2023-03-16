@@ -20,7 +20,6 @@ const Article = ({ filename }) => {
               childDataJson {
                 title
                 introduction
-                dataOrder
                 dataContent
                 facebookData {
                   icon
