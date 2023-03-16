@@ -45,23 +45,27 @@ const AnimalInfo = ({animalData, image, children }) => {
     fontSize = 12
   }
   const img = getImage(animalData.hero_image)  
-  return (
-    <>
-      <Title>{animalData.animal[0].toUpperCase() + animalData.animal.substr(1, animalData.animal.length)}</Title>
-      <Image
-        alt={""}
-        image={img}
-        backgroundColor={"#FFE6B5"}
-      />
-      <TextArea fontSize={fontSize} 
-                marginTop={typeof window !== `undefined` ? (((window.innerHeight - 400)/300)*4)-4 : 0}>
-        <Text><Soulign>Nom Scientifique:</Soulign>{animalData.scientific_name}</Text>
-        <Text><Soulign>Durée de vie:</Soulign>{animalData.age}</Text>
-        <Text><Soulign>Gestation:</Soulign>{animalData.gestation}</Text>
-        <Text><Soulign>Nombre de petits:</Soulign>{`de ${animalBaby[0]} à ${animalBaby[1]} petits.`}</Text>
-        <Text><Soulign>Temperament:</Soulign>{animalData.temperament}</Text>
-      </TextArea>
-    </>
-  );
+  if (animalData.animal) {
+    return (
+      <>
+        <Title>{animalData.animal[0].toUpperCase() + animalData.animal.substr(1, animalData.animal.length)}</Title>
+        <Image
+          alt={""}
+          image={img}
+          backgroundColor={"#FFE6B5"}
+        />
+        <TextArea fontSize={fontSize} 
+                  marginTop={typeof window !== `undefined` ? (((window.innerHeight - 400)/300)*4)-4 : 0}>
+          <Text><Soulign>Nom Scientifique:</Soulign>{animalData.scientific_name}</Text>
+          <Text><Soulign>Durée de vie:</Soulign>{animalData.age}</Text>
+          <Text><Soulign>Gestation:</Soulign>{animalData.gestation}</Text>
+          <Text><Soulign>Nombre de petits:</Soulign>{`de ${animalBaby[0]} à ${animalBaby[1]} petits.`}</Text>
+          <Text><Soulign>Temperament:</Soulign>{animalData.temperament}</Text>
+        </TextArea>
+      </>
+    )
+  } else {
+    return;
+  }
 };
 export default AnimalInfo;
