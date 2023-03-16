@@ -1,8 +1,8 @@
 import * as React from 'react'
 import styled from "styled-components"
 import Layout from '../../../components/layout'
+import Article from '../../../components/article'
 import { graphql } from 'gatsby'
-import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 export const query = graphql`
@@ -20,7 +20,7 @@ export const query = graphql`
             gatsbyImageData
           }
         }
-        scientific_name
+        jsonName
       }
     }
   }
@@ -47,17 +47,10 @@ const Main = styled.div`
   border-width: 3px;
   border-color: #FFCBA5;
 `
-const Text = styled.div`
-  width: 100%;
-  min-width: 300px;
-  margin: 10px;
-`
 
 const ArticlePost = ({ data }) => {
   const image = getImage(data.mdx.frontmatter.hero_image)
-  console.log(data)
   function convTexte(txt) {
-    console.log(txt)
     const tab = txt.split(" ")
     let texte = ""
     for(let i = 1; i < tab.length; i++){
@@ -66,7 +59,6 @@ const ArticlePost = ({ data }) => {
     }
     return texte;
   }
-  console.log(<MDXRenderer>{data.mdx.body}</MDXRenderer>)
   return (
     <Layout pageTitle={data.title} language={"french"}>
     <Title>{convTexte(data.mdx.frontmatter.title)}</Title>
@@ -83,7 +75,7 @@ const ArticlePost = ({ data }) => {
             </a>
           </p>
         </Image>
-        <Text>{data.mdx.frontmatter.scientific_name}</Text>
+        <Article filename={data.mdx.frontmatter.jsonName}/>
       </Main>
     </Layout>
   )

@@ -26,20 +26,6 @@ const Main = styled.div`
 
 export const query = graphql`
   query {
-    allMdx(sort: {fields: frontmatter___date, order: DESC}) {
-      nodes {
-        frontmatter {
-          hero_image_alt
-          hero_image {
-            childImageSharp {
-              gatsbyImageData
-            }
-          }
-        }
-        id
-        slug
-      }
-    }
     allDataJson {
       edges {
         node {
@@ -54,14 +40,14 @@ export const query = graphql`
   }
 `
 const IndexPage = ({ data }) => {
-  const imageData = getImage(data.allMdx.nodes[0].frontmatter.hero_image)
+  /*const imageData = getImage(data.allMdx.nodes[2].frontmatter.hero_image)
   const FacebookData = {
     icon: data.allDataJson.edges[data.allDataJson.edges.findIndex((a) => a.node.facebook != null )].node.facebook,
     image: imageData,
     texte: data.allMdx.nodes[0].frontmatter.hero_image_alt,
     title: "Zoo de Beauval",
     date: "10.10.2022"
-  }
+  }*/
   return (
     <Layout pageTitle="Acceuil" language="french">
       <Main>
@@ -69,8 +55,8 @@ const IndexPage = ({ data }) => {
           <StaticImage alt="french flag" src="../../data/bienvenu/welcome.jpg"/>
         </Image>
 
-        <Facebook data={FacebookData}/>
-        <Insta data={FacebookData}/>
+        {/*<Facebook data={FacebookData}/>
+        <Insta data={FacebookData}/>*/}
       </Main>
     </Layout>
   )
