@@ -33,9 +33,8 @@ const Article = ({ filename, children }) => {
         return <Text>Facebook publication</Text>
       } else if (txt === 'Instagram'){
         return <Text>Instagram publication</Text>
-      } else {
-        return <Text>{txt}</Text>
       }
+      return <Text>{txt}</Text>
     }
     
     const articleData = data.allFile.edges.find(edge => edge.node.childDataJson.title === filename).node.childDataJson;

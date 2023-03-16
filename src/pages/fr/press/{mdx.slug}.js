@@ -59,26 +59,30 @@ const ArticlePost = ({ data }) => {
     }
     return texte;
   }
-  return (
-    <Layout pageTitle={data.title} language={"french"}>
-    <Title>{convTexte(data.mdx.frontmatter.title)}</Title>
-      <Main>
-        <Image>
-          <GatsbyImage
-            image={image}
-            alt={data.mdx.frontmatter.hero_image_alt}
-          />
-          <p>
-            Photo Credit:{" "}
-            <a href={data.mdx.frontmatter.hero_image_credit_link}>
-              {data.mdx.frontmatter.hero_image_credit_text}
-            </a>
-          </p>
-        </Image>
-        <Article filename={data.mdx.frontmatter.jsonName}/>
-      </Main>
-    </Layout>
-  )
+  if (data.mdx.frontmatter.title === "Felin"){
+    return <Layout pageTitle={data.title} language={"french"}/>;
+  } else {
+    return (
+      <Layout pageTitle={data.title} language={"french"}>
+      <Title>{convTexte(data.mdx.frontmatter.title)}</Title>
+        <Main>
+          <Image>
+            <GatsbyImage
+              image={image}
+              alt={data.mdx.frontmatter.hero_image_alt}
+            />
+            <p>
+              Photo Credit:{" "}
+              <a href={data.mdx.frontmatter.hero_image_credit_link}>
+                {data.mdx.frontmatter.hero_image_credit_text}
+              </a>
+            </p>
+          </Image>
+          <Article filename={data.mdx.frontmatter.jsonName}/>
+        </Main>
+      </Layout>
+    )
+  }
 }
 
 export default ArticlePost
