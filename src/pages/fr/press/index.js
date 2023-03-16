@@ -30,9 +30,9 @@ const Article = ({ data }) => {
                           date={node.frontmatter.date} 
                           img={[node.frontmatter.hero_image, node.frontmatter.hero_image_alt]}/>
           : ( node.frontmatter.title[0]==="A" ? 
-              <ArticlePanel key={node.id} 
+              <ArticlePanel key={node.id}
                             title={convTexte(node.frontmatter.title)} 
-                            link={`/fr/press/${node.slug}`} 
+                            link={`/fr/press/${node.slug.toLowerCase()}`} 
                             date={node.frontmatter.date} 
                             img={[node.frontmatter.hero_image, node.frontmatter.hero_image_alt]}/>
           : null)
