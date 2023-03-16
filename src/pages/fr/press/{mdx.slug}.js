@@ -49,6 +49,9 @@ const Main = styled.div`
 `
 
 const ArticlePost = ({ data }) => {
+  if (data.mdx.frontmatter.title[0] === "F") {
+    return <Layout pageTitle="Error" language={"french"}/>;
+  }
   const image = getImage(data.mdx.frontmatter.hero_image)
   function convTexte(txt) {
     const tab = txt.split(" ")
@@ -59,30 +62,26 @@ const ArticlePost = ({ data }) => {
     }
     return texte;
   }
-  if (data.mdx.frontmatter.title === "Felin"){
-    return <Layout pageTitle={data.title} language={"french"}/>;
-  } else {
-    return (
-      <Layout pageTitle={data.title} language={"french"}>
+  return (
+    <Layout pageTitle={data.title} language={"french"}>
       <Title>{convTexte(data.mdx.frontmatter.title)}</Title>
-        <Main>
-          <Image>
-            <GatsbyImage
-              image={image}
-              alt={data.mdx.frontmatter.hero_image_alt}
-            />
-            <p>
-              Photo Credit:{" "}
-              <a href={data.mdx.frontmatter.hero_image_credit_link}>
-                {data.mdx.frontmatter.hero_image_credit_text}
-              </a>
-            </p>
-          </Image>
-          <Article filename={data.mdx.frontmatter.jsonName}/>
-        </Main>
-      </Layout>
-    )
-  }
+      <Main>
+        <Image>
+          <GatsbyImage
+            image={image}
+            alt={data.mdx.frontmatter.hero_image_alt}
+          />
+          <p>
+            Photo Credit:{" "}
+            <a href={data.mdx.frontmatter.hero_image_credit_link}>
+              {data.mdx.frontmatter.hero_image_credit_text}
+            </a>
+          </p>
+        </Image>
+        <Article filename={data.mdx.frontmatter.jsonName}/>
+      </Main>
+    </Layout>
+  )
 }
 
 export default ArticlePost

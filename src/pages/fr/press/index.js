@@ -29,14 +29,14 @@ const Article = ({ data }) => {
                           link={`/`} 
                           date={node.frontmatter.date} 
                           img={[node.frontmatter.hero_image, node.frontmatter.hero_image_alt]}/>
-          : ( node.frontmatter.title[0]==="A" ? 
+          : ( node.frontmatter.title[0]==="F" ? 
+              null :
               <ArticlePanel key={node.id}
                             title={convTexte(node.frontmatter.title)} 
                             link={`/fr/press/${node.slug.toLowerCase()}`} 
                             date={node.frontmatter.date} 
                             img={[node.frontmatter.hero_image, node.frontmatter.hero_image_alt]}/>
-          : null)
-      )}</Flex>
+      ))}</Flex>
     </Layout>
   )
 }

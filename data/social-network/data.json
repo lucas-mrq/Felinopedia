@@ -1,0 +1,24 @@
+[
+    {	
+        "title": "Social Network",
+        "introduction": "Introduction introduction introduction",
+        "dataOrder": "Texte",
+        "dataContent": [
+            "Texte 1.......",
+            "Facebook",
+            "Texte 2.......",
+            "Texte 3.......",
+            "Instagram",
+            "Texte 4......."
+        ],
+        "facebookData": {
+            "icon": "",
+            "image": "",
+            "texte": "Facebook text",
+            "title": "Zoo de Beauval",
+            "date": "10.10.2022"
+          },
+        "zoo": "Zoo de Beauval", 
+        "facebook": "./image/fb_beauval.jpg"
+    }
+]

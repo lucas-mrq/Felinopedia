@@ -162,69 +162,67 @@ const espece = (name) => {
 const FelinopediaPost = ({ data }) => {
   const [showItems, setShowItems] = useState(true)
   const [selected, setSelected] = useState(null)
+  if (!(data.mdx.frontmatter.title[0] === "F")) {
+    return <Layout pageTitle="Error" language={"french"}/>;
+  }
   console.log(data)
   const animalData = data.mdx.frontmatter
-  if (animalData.title === "Felin"){
-    return (
-      <Layout pageTitle={animalData.title} language={"french"}>
-        <Flex windowSize={typeof window !== `undefined` ? window.innerWidth : 750}>
-          <Panel  onClick={() => typeof window !== `undefined` && window.innerWidth < 730 ? setShowItems(true) :  null} 
-                  windowSize={typeof window !== `undefined` ? window.innerWidth : 750}
-                  showItems={showItems ? 0 : 1}>
-            {showItems ? 
-              <AnimalInfo animalData={animalData}/> 
-            : <Annuaire data={selected}/>}
-          </Panel>
-          {!showItems && typeof window !== `undefined` && window.innerWidth < 730 ?
-            null
-          : <ContentArea windowSize={typeof window !== `undefined` ? window.innerWidth : 750}>
-              {data.allDataJson.edges
-                  .filter((zoo) => zoo.node.espece === animalData.jsonName)
-                  .sort(function (a, b) {return a.node.zoo.localeCompare(b.node.zoo)})
-                  .map((zoo, index) => {
-                    const imageAnimal = getImage(zoo.node.image)
-                    return (
-                      <AnimalPanel
-                        key={index}
-                        index={index}
-                        selected={selected}
-                        cursor={zoo.node.content.length}
-                        onClick={() => {
-                          if (zoo.node.content.length !== 0){
-                            if (showItems || (selected && selected.zoo !== zoo.node.zoo)){
-                              setSelected(zoo.node)
-                              setShowItems(false)
-                            } else {
-                              setSelected(null)
-                              setShowItems(true)
-                            }
+  return (
+    <Layout pageTitle={animalData.title} language={"french"}>
+      <Flex windowSize={typeof window !== `undefined` ? window.innerWidth : 750}>
+        <Panel  onClick={() => typeof window !== `undefined` && window.innerWidth < 730 ? setShowItems(true) :  null} 
+                windowSize={typeof window !== `undefined` ? window.innerWidth : 750}
+                showItems={showItems ? 0 : 1}>
+          {showItems ? 
+            <AnimalInfo animalData={animalData}/> 
+          : <Annuaire data={selected}/>}
+        </Panel>
+        {!showItems && typeof window !== `undefined` && window.innerWidth < 730 ?
+          null
+        : <ContentArea windowSize={typeof window !== `undefined` ? window.innerWidth : 750}>
+            {data.allDataJson.edges
+                .filter((zoo) => zoo.node.espece === animalData.jsonName)
+                .sort(function (a, b) {return a.node.zoo.localeCompare(b.node.zoo)})
+                .map((zoo, index) => {
+                  const imageAnimal = getImage(zoo.node.image)
+                  return (
+                    <AnimalPanel
+                      key={index}
+                      index={index}
+                      selected={selected}
+                      cursor={zoo.node.content.length}
+                      onClick={() => {
+                        if (zoo.node.content.length !== 0){
+                          if (showItems || (selected && selected.zoo !== zoo.node.zoo)){
+                            setSelected(zoo.node)
+                            setShowItems(false)
+                          } else {
+                            setSelected(null)
+                            setShowItems(true)
                           }
-                        }}
-                      >
-                      {zoo.node.zoo}
-                      <SmallText>
-                        {zoo.node.content.filter((content) => (!(content.mort) && !(content.zoo))).length !==0 ? 
-                          zoo.node.content.filter((content) => (!(content.mort) && !(content.zoo))).length + " " + espece(zoo.node.espece) + (zoo.node.content.length > 1 ? "s" : "") 
-                          : "0 infos"}
-                      </SmallText>
-                      <Image
-                        image={imageAnimal}
-                        alt="Image d'un animal du zoo"
-                      />
-                      </AnimalPanel>
-                    )
-                  }
-                )
-              }
-            </ContentArea>
-          }
-        </Flex>
-      </Layout>
-    )
-  }
-  else {
-    return  <Layout pageTitle={animalData.title} language={"french"}/>;
-  }
+                        }
+                      }}
+                    >
+                    {zoo.node.zoo}
+                    <SmallText>
+                      {zoo.node.content.filter((content) => (!(content.mort) && !(content.zoo))).length !==0 ? 
+                        zoo.node.content.filter((content) => (!(content.mort) && !(content.zoo))).length + " " + espece(zoo.node.espece) + (zoo.node.content.length > 1 ? "s" : "") 
+                        : "0 infos"}
+                    </SmallText>
+                    <Image
+                      image={imageAnimal}
+                      alt="Image d'un animal du zoo"
+                    />
+                    </AnimalPanel>
+                  )
+                }
+              )
+            }
+          </ContentArea>
+        }
+      </Flex>
+    </Layout>
+  )
 }
 
 export default FelinopediaPost
