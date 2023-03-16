@@ -80,7 +80,6 @@ const Gras = styled.b`
 `
 
 const Insta = ({data }) => {
-  const iconImage = getImage(data.icon) 
   const tabTexte = data.texte.split(' ')
   let texte = ''
   for (let i = 0; i < tabTexte.length; i++) {
@@ -88,41 +87,40 @@ const Insta = ({data }) => {
       texte += tabTexte[i]
     }
   }
-  console.log(texte)
   return (
     <Window>
-          <Name>
-            <Profil
-              alt={""}
-              image={iconImage}
-              backgroundColor={"#FFFFFF"}
-            />
-            <Title>
-              <b>{data.title}</b>
-            </Title>
-            <Menu>
-              <StaticImage alt="..." src="../images/points.png"/>
-            </Menu>
-          </Name>
-        <ImageArea alt={""} image={data.image} backgroundColor={"#FFE6B5"}/>
-        <Icons>
-          <RightArea>
-            <StaticImage alt="..." src="../images/like.png"/>
-            <StaticImage alt="..." src="../images/chat.png"/>
-            <StaticImage alt="..." src="../images/insta_share.png"/>
-          </RightArea>
-          <LeftArea>
-            <StaticImage alt="..." src="../images/save.png"/>
-          </LeftArea>
-        </Icons>
-        <Flex>
-          <TextArea>
-            <Gras>
-              {data.title + " " }
-            </Gras>
-            {data.texte}
-          </TextArea>
-        </Flex>
+      <Name>
+        <Profil
+          alt={""}
+          image={getImage(data.icon)}
+          backgroundColor={"#FFFFFF"}
+        />
+        <Title>
+          <b>{data.title}</b>
+        </Title>
+        <Menu>
+          <StaticImage alt="..." src="../images/points.png"/>
+        </Menu>
+      </Name>
+      <ImageArea alt={""} image={getImage(data.image)} backgroundColor={"#FFE6B5"}/>
+      <Icons>
+        <RightArea>
+          <StaticImage alt="..." src="../images/like.png"/>
+          <StaticImage alt="..." src="../images/chat.png"/>
+          <StaticImage alt="..." src="../images/insta_share.png"/>
+        </RightArea>
+        <LeftArea>
+          <StaticImage alt="..." src="../images/save.png"/>
+        </LeftArea>
+      </Icons>
+      <Flex>
+        <TextArea>
+          <Gras>
+            {data.title + " " }
+          </Gras>
+          {data.texte}
+        </TextArea>
+      </Flex>
     </Window>
   );
 };

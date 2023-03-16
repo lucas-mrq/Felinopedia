@@ -62,7 +62,6 @@ const Flex = styled.div`
 `
 
 const Facebook = ({data }) => {
-  const iconImage = getImage(data.icon) 
   const tabTexte = data.texte.split(' ')
   let texte = ''
   for (let i = 0; i < tabTexte.length; i++) {
@@ -70,40 +69,39 @@ const Facebook = ({data }) => {
       texte += tabTexte[i]
     }
   }
-  console.log(texte)
   return (
     <Window>
-          <Name>
-            <GatsbyImage
-              alt={""}
-              image={iconImage}
-              backgroundColor={"#FFFFFF"}
-            />
-            <Title>
-              <b>{data.title}</b>
-              {data.date}
-            </Title>
-            <Menu>
-              <StaticImage alt="..." src="../images/points.png"/>
-            </Menu>
-          </Name>
-        <TextArea>{data.texte}</TextArea>
-        <ImageArea alt={""} image={data.image} backgroundColor={"#FFE6B5"}/>
-        <BottomArea>
-          <Flex>
-            <SmallBottom>
-              <StaticImage alt="..." src="../images/like.png"/>
-            </SmallBottom>
-            J'aime
-          </Flex>
-          |
-          <Flex>
-            <SmallBottom>
-              <StaticImage alt="..." src="../images/chat.png"/>
-            </SmallBottom>
-            Commenter
-          </Flex>
-        </BottomArea>
+      <Name>
+        <GatsbyImage
+          alt={""}
+          image={getImage(data.icon)}
+          backgroundColor={"#FFFFFF"}
+        />
+        <Title>
+          <b>{data.title}</b>
+          {data.date}
+        </Title>
+        <Menu>
+          <StaticImage alt="..." src="../images/points.png"/>
+        </Menu>
+      </Name>
+      <TextArea>{data.texte}</TextArea>
+      <ImageArea alt={""} image={getImage(data.image)} backgroundColor={"#FFE6B5"}/>
+      <BottomArea>
+        <Flex>
+          <SmallBottom>
+            <StaticImage alt="..." src="../images/like.png"/>
+          </SmallBottom>
+          J'aime
+        </Flex>
+        |
+        <Flex>
+          <SmallBottom>
+            <StaticImage alt="..." src="../images/chat.png"/>
+          </SmallBottom>
+          Commenter
+        </Flex>
+      </BottomArea>
     </Window>
   );
 };

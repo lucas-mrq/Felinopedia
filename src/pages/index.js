@@ -1,9 +1,5 @@
 import * as React from 'react'
-import { graphql } from 'gatsby'
 import Layout from '../components/layout'
-import Facebook from '../components/facebook'
-import Insta from '../components/instagram'
-import { getImage } from 'gatsby-plugin-image'
 import styled from "styled-components"
 import { StaticImage } from 'gatsby-plugin-image'
 
@@ -24,39 +20,13 @@ const Main = styled.div`
   justify-content: space-evenly;
 `
 
-export const query = graphql`
-  query {
-    allDataJson {
-      edges {
-        node {
-          facebook {
-            childImageSharp {
-              gatsbyImageData
-            }
-          }
-        }
-      }
-    }
-  }
-`
 const IndexPage = ({ data }) => {
-  /*const imageData = getImage(data.allMdx.nodes[2].frontmatter.hero_image)
-  const FacebookData = {
-    icon: data.allDataJson.edges[data.allDataJson.edges.findIndex((a) => a.node.facebook != null )].node.facebook,
-    image: imageData,
-    texte: data.allMdx.nodes[0].frontmatter.hero_image_alt,
-    title: "Zoo de Beauval",
-    date: "10.10.2022"
-  }*/
   return (
     <Layout pageTitle="Acceuil" language="french">
       <Main>
         <Image>
           <StaticImage alt="french flag" src="../../data/bienvenu/welcome.jpg"/>
         </Image>
-
-        {/*<Facebook data={FacebookData}/>
-        <Insta data={FacebookData}/>*/}
       </Main>
     </Layout>
   )

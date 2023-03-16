@@ -12,11 +12,18 @@
             "Texte 4......."
         ],
         "facebookData": {
-            "icon": "",
-            "image": "",
+            "icon": "./image/fb_beauval.jpg",
+            "image": "./facebook.jpg",
             "texte": "Facebook text",
             "title": "Zoo de Beauval",
             "date": "10.10.2022"
-          }
+          },
+        "instagramData": {
+            "icon": "./image/fb_beauval.jpg",
+            "image": "./facebook.jpg",
+            "texte": "Facebook text",
+            "title": "Zoo de Beauval",
+            "date": "10.10.2022"
+        }
     }
 ]
