@@ -27,7 +27,16 @@ const Article = ({ filename, children }) => {
         }
       }
     `)
-  
+    
+    function format(txt) {
+      if (txt === 'Facebook') {
+        return <Text>Facebook publication</Text>
+      } else if (txt === 'Instagram'){
+        return <Text>Instagram publication</Text>
+      } else {
+        return <Text>{txt}</Text>
+      }
+    }
     
     const articleData = data.allFile.edges.find(edge => edge.node.childDataJson.title === filename).node.childDataJson;
     console.log(articleData)
@@ -37,9 +46,7 @@ const Article = ({ filename, children }) => {
         <Text>
             {articleData.introduction}
         </Text>
-        <Text>
-            {articleData.dataContent}
-        </Text>
+        {articleData.dataContent.map((data) => {return format(data);})}
       </>
     )
   }
