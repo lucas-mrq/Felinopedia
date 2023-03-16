@@ -20,6 +20,7 @@ export const query = graphql`
             gatsbyImageData
           }
         }
+        scientific_name
       }
     }
   }
@@ -82,11 +83,7 @@ const ArticlePost = ({ data }) => {
             </a>
           </p>
         </Image>
-        <Text>
-          <MDXRenderer>
-            {data.mdx.body}
-          </MDXRenderer>
-        </Text>
+        <Text>{data.mdx.frontmatter.scientific_name}</Text>
       </Main>
     </Layout>
   )
