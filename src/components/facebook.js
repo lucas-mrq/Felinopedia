@@ -39,6 +39,13 @@ const Name = styled.div`
   display: flex;
   margin: 10px;
 `
+const Icon = styled.div`
+  width: 30px;
+  height: 30px;
+  display: flex;
+  border-radius: 25px;
+  background-color: ${(props) => props.color};
+`
 const Title = styled.div`
   height: 30px;
   font-size: 13px;
@@ -72,11 +79,7 @@ const Facebook = ({data }) => {
   return (
     <Window>
       <Name>
-        <GatsbyImage
-          alt={""}
-          image={getImage(data.icon)}
-          backgroundColor={"#FFFFFF"}
-        />
+        <Icon color={data.icon}/>
         <Title>
           <b>{data.title}</b>
           {data.date}

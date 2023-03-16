@@ -23,11 +23,7 @@ const Article = ({ filename }) => {
                 dataOrder
                 dataContent
                 facebookData {
-                  icon {
-                    childImageSharp {
-                      gatsbyImageData
-                    }
-                  }
+                  icon
                   image {
                     childImageSharp {
                       gatsbyImageData
@@ -38,11 +34,7 @@ const Article = ({ filename }) => {
                   date
                 }
                 instagramData {
-                  icon {
-                    childImageSharp {
-                      gatsbyImageData
-                    }
-                  }
+                  icon
                   image {
                     childImageSharp {
                       gatsbyImageData

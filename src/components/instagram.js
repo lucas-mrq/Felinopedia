@@ -25,6 +25,13 @@ const ImageArea = styled(GatsbyImage)`
   height: 301px;
   margin-left: -0.5px;
 `
+const Icon = styled.div`
+  width: 30px;
+  height: 30px;
+  display: flex;
+  border-radius: 25px;
+  background-color: ${(props) => props.color};
+`
 const RightArea = styled.div`
   height: 30px;
   margin: 0 10px 0 10px;
@@ -90,11 +97,7 @@ const Insta = ({data }) => {
   return (
     <Window>
       <Name>
-        <Profil
-          alt={""}
-          image={getImage(data.icon)}
-          backgroundColor={"#FFFFFF"}
-        />
+        <Icon color={data.icon}/>
         <Title>
           <b>{data.title}</b>
         </Title>
