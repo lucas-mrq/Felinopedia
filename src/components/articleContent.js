@@ -6,12 +6,12 @@ import styled from "styled-components"
 import "../styles.css"
 
 const Text = styled.div`
-  width: 100%;
   min-width: 300px;
   margin: 10px;
+  text-align : justify;
 `
 
-const Article = ({ filename }) => {
+const ArticleContent = ({ filename }) => {
     const data = useStaticQuery(graphql`
       query MyQuery {
         allFile(filter: { sourceInstanceName: { eq: "data" }, extension: { eq: "json" } }) {
@@ -61,7 +61,6 @@ const Article = ({ filename }) => {
       return <Text>{txt}</Text>
     }
 
-
     return (
       <>
         <Text>
@@ -72,4 +71,4 @@ const Article = ({ filename }) => {
     )
   }
 
-export default Article
+export default ArticleContent

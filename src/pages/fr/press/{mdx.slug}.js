@@ -1,7 +1,7 @@
 import * as React from 'react'
 import styled from "styled-components"
 import Layout from '../../../components/layout'
-import Article from '../../../components/article'
+import ArticleContent from '../../../components/articleContent'
 import { graphql } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
@@ -35,6 +35,10 @@ const Image = styled.div`
   width: 450px;
   margin: 10px;
 `
+const Credit = styled.div`
+  width: 450px;
+  font-size: 12px;
+`
 const Main = styled.div`
   margin: 10px;
   display: flex;
@@ -49,7 +53,7 @@ const Main = styled.div`
 `
 
 const ArticlePost = ({ data }) => {
-  if (data.mdx.frontmatter.title[0] === "F") {
+  if (data.mdx.frontmatter.title[0] === "F" || data.mdx.frontmatter.title === "Bienvenu") {
     return <Layout pageTitle="Error" language={"french"}/>;
   }
   const image = getImage(data.mdx.frontmatter.hero_image)
@@ -71,14 +75,14 @@ const ArticlePost = ({ data }) => {
             image={image}
             alt={data.mdx.frontmatter.hero_image_alt}
           />
-          <p>
-            Photo Credit:{" "}
+          <Credit>
+            Crédit Photo:{" "}
             <a href={data.mdx.frontmatter.hero_image_credit_link}>
               {data.mdx.frontmatter.hero_image_credit_text}
             </a>
-          </p>
+          </Credit>
         </Image>
-        <Article filename={data.mdx.frontmatter.jsonName}/>
+        <ArticleContent filename={data.mdx.frontmatter.jsonName}/>
       </Main>
     </Layout>
   )
