@@ -1,28 +1,21 @@
 [
     {	
         "title": "Bienvenu",
-        "introduction": "Introduction introduction introduction",
-        "dataContent": [
-            "Texte 1.......",
-            "Facebook",
-            "Texte 2.......",
-            "Texte 3.......",
-            "Instagram",
-            "Texte 4......."
-        ],
+        "introduction": "",
+        "dataContent": [],
         "facebookData": {
-            "icon": "#0369b1",
+            "icon": "",
             "image": "./welcome.jpg",
-            "texte": "Facebook text",
-            "title": "Zoo de Beauval",
-            "date": "10.10.2022"
+            "texte": "",
+            "title": "",
+            "date": ""
           },
         "instagramData": {
-            "icon": "#0369b1",
+            "icon": "",
             "image": "./welcome.jpg",
-            "texte": "Facebook text",
-            "title": "Zoo de Beauval",
-            "date": "10.10.2022"
+            "texte": "",
+            "title": "",
+            "date": ""
           }
     }
 ]

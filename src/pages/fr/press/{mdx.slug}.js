@@ -53,22 +53,13 @@ const Main = styled.div`
 `
 
 const ArticlePost = ({ data }) => {
-  if (data.mdx.frontmatter.title[0] === "F" || data.mdx.frontmatter.title === "Bienvenu") {
+  if (data.mdx.frontmatter.title[0] === "F") {
     return <Layout pageTitle="Error" language={"french"}/>;
   }
   const image = getImage(data.mdx.frontmatter.hero_image)
-  function convTexte(txt) {
-    const tab = txt.split(" ")
-    let texte = ""
-    for(let i = 1; i < tab.length; i++){
-      texte += tab[i]
-      texte += " "
-    }
-    return texte;
-  }
   return (
     <Layout pageTitle={data.title} language={"french"}>
-      <Title>{convTexte(data.mdx.frontmatter.title)}</Title>
+      <Title>{data.mdx.frontmatter.title}</Title>
       <Main>
         <Image>
           <GatsbyImage

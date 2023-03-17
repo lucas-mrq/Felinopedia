@@ -113,7 +113,7 @@ const Font = styled.div`
 
 const Layout = ({ pageTitle, language, children }) => {
   const [showMenu, setShowMenu] = useState(false)
-  const listMenu = [ ["Acceuil","/"], ["Article", "/fr/press"], ["Felinopedia","/fr/felinopedia"], ["Liste des Zoos","/fr/list"]]
+  const listMenu = [ ["Article","/fr/press"], ["Naissances", "/fr/born"], ["Felinopedia","/fr/felinopedia"], ["Liste des Zoos","/fr/list"]]
   const data = useStaticQuery(graphql`
     query {
       site {
