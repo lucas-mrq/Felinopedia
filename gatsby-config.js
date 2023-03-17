@@ -8,6 +8,7 @@ module.exports = {
     "gatsby-plugin-image",
     "gatsby-plugin-mdx",
     `gatsby-transformer-json`,
+    `gatsby-plugin-react-svg`,
     {
       resolve: "gatsby-source-filesystem",
       options: {

@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import { Link , navigate, useStaticQuery, graphql } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image'
 import styled from "styled-components";
+import LogoFelinopedia from "../images/icon-layout.svg";
 import "../styles.css";
 
 const ContentArea = styled.main`
@@ -153,7 +154,7 @@ const Layout = ({ pageTitle, language, children }) => {
                     X
                   </Cursor>
                 </PhoneMenu>
-                : <><StaticImage alt="logo" src="../images/felinopedia.png" width={46} height={46}/>
+                : <><LogoFelinopedia/>
                     <Button flag={5} onClick={() => setShowMenu(true)}>
                       <Font>Menu</Font>
                   </Button></>}
