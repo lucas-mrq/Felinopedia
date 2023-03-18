@@ -41,8 +41,8 @@ const BabyPanel = ({ data }) => {
     console.log(data)
     return (
         <Panel>
-            <Title>{data.zoo}</Title>
-            <Infos>{data.espece}</Infos>
+            <Title>{data.espece}</Title>
+            <Infos>{data.zoo}</Infos>
             <Infos>{"Parents: " + data.parents[0] + " & " + data.parents[1]}</Infos>
             <Infos>{data.date}</Infos>
             <Babys>

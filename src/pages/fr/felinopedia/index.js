@@ -34,12 +34,13 @@ export const query = graphql`
 const Felinopedia = ({ data }) => {
   return (
     <Layout pageTitle="Felinopedia" language={"french"}>
-      <Flex>{data.allMdx.nodes.map((node) => node.frontmatter.title[0]==="F" ? <ArticlePanel key={node.id} 
-                                                    title={node.frontmatter.animal} 
-                                                    link={`/fr/felinopedia/${node.slug}`} 
-                                                    date={node.frontmatter.date} 
-                                                    img={[node.frontmatter.hero_image, node.frontmatter.hero_image_alt]}/>
-                                                  : null
+      <Flex>{data.allMdx.nodes.map((node) => node.frontmatter.title[0]==="F" ? 
+        <ArticlePanel key={node.id} 
+          title={node.frontmatter.animal} 
+          link={`/fr/felinopedia/${node.slug}`} 
+          date={node.frontmatter.date} 
+          img={[node.frontmatter.hero_image, node.frontmatter.hero_image_alt]}/>
+        : null
       )}</Flex>
     </Layout>
   )
