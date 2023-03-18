@@ -74,8 +74,8 @@ const Liste = () => {
 const zoo = [
   {
     "name": "Bio-Topia Fort-Mardyck",
-    "color": "#3e8223",
-    "border": "#000000",
+    "color": "#FFFFFF",
+    "border": "#006633",
     "position": ["-107", "3"]
   },
   {
@@ -92,8 +92,8 @@ const zoo = [
   },
   {
     "name": "Parc Zoologique Bourbansais",
-    "color": "#8E7F7B",
-    "border": "#714838",
+    "color": "#FFFFFF",
+    "border": "#3D5597",
     "position": ["5","-54"]
   },
   {
@@ -104,8 +104,8 @@ const zoo = [
   },
   {
     "name": "zoo de Maubeuge",
-    "color": "#000000",
-    "border": "#7BBEE5",
+    "color": "#FFFFFF",
+    "border": "#0073E6",
     "position": ["-4","22"]
   },
   {
@@ -131,13 +131,13 @@ const zoo = [
   {
     "name": "Parc animalier de Sainte-Croix",
     "color": "#FFFFFF",
-    "border": "#FFBF00",
+    "border": "#005D2B",
     "position": ["-8", "75"],
   },
   {
-    "name": "Parc de l'Auxois",
+    "name": "Parc de l Auxois",
     "color": "#FFFFFF",
-    "border": "#FFBF00",
+    "border": "#E51E2A",
     "position": ["14", "35"],
   },
   {
@@ -184,8 +184,8 @@ const zoo = [
   },
   {
     "name": "Safari de Peaugres",
-    "color": "#FFFFFF",
-    "border": "#6D4931",
+    "color": "#EA5B0C",
+    "border": "#7A2E12",
     "position": ["-8", "49"],
   },
   {
@@ -213,7 +213,7 @@ const zoo = [
     "position": ["0", "-28"],
   },
   {
-    "name": "Parc d'Asson",
+    "name": "Parc d Asson",
     "color": "#379225",
     "border": "#FEB835",
     "position": ["-5", "-35"],

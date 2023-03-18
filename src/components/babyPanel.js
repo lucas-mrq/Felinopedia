@@ -3,7 +3,7 @@ import styled from "styled-components"
 import "../styles.css";
 
 const Panel = styled.div`
-    height: 175px;
+    height: 140px;
     width: 200px;
     color: rgb(17, 87, 78);
     font-size: 15px;
@@ -11,13 +11,13 @@ const Panel = styled.div`
     border-style: solid;
     border-width: 2px;
     border-color: rgb(255, 203, 165);
-    border-radius: 50px;
-    margin: 10px 10px 20px;
+    border-radius: 5px;
+    margin: 10px;
     text-align: center;
 `;
 
 const Title = styled.div`
-    font-size: 20px;
+    font-size: 16px;
     margin-top: 10px;
     font-weight: bold;
 `;
@@ -26,7 +26,6 @@ const Infos = styled.div`
     margin-top: 5px;
 `;
 const Babys = styled.div`
-    margin-top: 10px;
     display: flex;
     justify-content: space-evenly;
 `;
