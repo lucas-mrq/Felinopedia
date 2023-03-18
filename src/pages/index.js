@@ -25,7 +25,7 @@ const IndexPage = ({ data }) => {
     <Layout pageTitle="Acceuil" language="french">
       <Main>
         <Image>
-          <StaticImage alt="french flag" src="../../data/bienvenu/welcome.jpg"/>
+          <StaticImage alt="french flag" src="../../data/bienvenue/welcome.jpg"/>
         </Image>
       </Main>
     </Layout>

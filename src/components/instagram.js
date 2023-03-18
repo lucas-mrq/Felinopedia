@@ -31,6 +31,7 @@ const Icon = styled.div`
   display: flex;
   border-radius: 25px;
   background-color: ${(props) => props.color};
+  cursor: pointer;
 `
 const RightArea = styled.div`
   height: 30px;
@@ -78,9 +79,6 @@ const Menu = styled.div`
 `
 const Flex = styled.div`
   display: flex;
-`
-const Profil = styled(GatsbyImage)`
-  cursor: pointer;
 `
 const Gras = styled.b`
   cursor: pointer;

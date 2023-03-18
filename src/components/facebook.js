@@ -45,6 +45,7 @@ const Icon = styled.div`
   display: flex;
   border-radius: 25px;
   background-color: ${(props) => props.color};
+  cursor: pointer;
 `
 const Title = styled.div`
   height: 30px;
