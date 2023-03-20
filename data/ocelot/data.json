@@ -65,7 +65,7 @@
                         },
                         {   
                             "name": "Pichu", 
-                            "naissance": "28.07.2021", 
+                            "naissance": "28.07.2022", 
                             "sexe": "male",
                             "animal_image": "./image/pichu.jpg",
                             "petits":   []
@@ -189,7 +189,7 @@
                         },
                         {
                             "name": "Wakan",
-                            "naissance": "18.10.2021",
+                            "naissance": "18.10.2022",
                             "sexe": "male", 
                             "animal_image": "./image/wakan.jpg",
                             "petits" : []
@@ -250,7 +250,7 @@
         "content":  []
     },
     {   
-        "zoo": "Parc des Félins",
+        "zoo": "Parc de Lumigny",
         "image": "./image/parc-felins.jpg", 
         "espece": "ocelot",
         "content":  []
@@ -271,7 +271,7 @@
                         },
                         {   
                             "name":"XX", 
-                            "naissance": "XX.XX.XXXX", 
+                            "naissance": "01.10.2022", 
                             "sexe": "X",
                             "animal_image": "./image/paprika-bebe.jpg",
                             "petits": []

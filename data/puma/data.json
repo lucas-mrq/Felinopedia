@@ -1,6 +1,6 @@
 [
     {	
-        "zoo": "Parc Zoologique de Paris", 
+        "zoo": "Zoo de Vincennes", 
         "espece": "puma",
         "image": "./image/paris.jpg",
         "content":  [    
@@ -24,7 +24,7 @@
                         },
                         {	
                             "name": "Emy", 
-                            "naissance": "26.08.2020", 
+                            "naissance": "21.08.2020", 
                             "sexe": "male", 
                             "animal_image": "./image/emy.jpg",
                             "petits":   []
@@ -32,7 +32,7 @@
                     ]
     },
     {	
-        "zoo": "Parc des Félins", 
+        "zoo": "Parc de Lumigny", 
         "espece": "puma",
         "image": "./image/parc-felins.jpg",
         "content":  [    
