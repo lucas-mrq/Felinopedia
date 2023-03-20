@@ -1,4 +1,4 @@
-import * as React from "react"
+import React from "react";
 import styled from "styled-components"
 import "../styles.css";
 
@@ -32,28 +32,27 @@ const Babys = styled.div`
 const Baby = styled.div`
     margin: 5px;
 `;
-const Bold = styled.div`
-    font-weight: bold;
-`;
 
-const BabyPanel = ({ data }) => {
+const BabyPanel = ({ data, zoo, espece }) => {
     console.log(data)
-    return (
-        <Panel>
-            <Title>{data.espece}</Title>
-            <Infos>{data.zoo}</Infos>
-            <Infos>{"Parents: " + data.parents[0] + " & " + data.parents[1]}</Infos>
-            <Infos>{data.date}</Infos>
-            <Babys>
-                {data.babys.map((baby) => {return(
-                <Baby>
-                    <Bold>{baby.name}</Bold>
-                    <div>{baby.sexe}</div>
-                </Baby>
-                );})}
-            </Babys>
-        </Panel>
-    );
+    if ((data.zoo === zoo || zoo === "Tous les zoos") && (data.espece === espece || espece === "Toutes les espèces")) {
+        return (
+            <Panel>
+                <Title>{data.espece}</Title>
+                <Infos><i>{data.zoo}</i></Infos>
+                <Infos>{data.date}</Infos>
+                <Infos><u>Parents</u>{" " + data.parents[0] + " & " + data.parents[1]}</Infos>
+                <Babys>
+                    {data.babys.map((baby) => {return(
+                    <Baby>
+                        <b>{baby.name}</b>
+                        <div>{baby.sexe}</div>
+                    </Baby>
+                    );})}
+                </Babys>
+            </Panel>
+        );
+    } else return <></>;
 };
 
 export default BabyPanel;

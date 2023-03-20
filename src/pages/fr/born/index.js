@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React, {useState} from "react";
 import Layout from '../../../components/layout'
 import BabyPanel from '../../../components/babyPanel'
 import styled from "styled-components"
@@ -8,14 +8,76 @@ const Flex = styled.div`
     flex-wrap: wrap;
     justify-content: space-around;
 `
+const List = styled.p`
+  font-size: 15px;
+  cursor: pointer
+`
+const Menu = styled.div`
+    width: 400px;
+    height: ${(props) => props.size}px;
+    color: rgb(17, 87, 78);
+    font-size: 15px;
+    background-color: rgb(255, 230, 181);
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(255, 203, 165);
+    border-radius: 5px;
+    margin: 10px;
+    text-align: center;
+`;
 
 const Born = ({ children }) => {
+  const [zooSelected, setZooSelected] = useState("Tous les zoos")
+  const [zooClick, setZooClick] = useState(false)
+  const [especeSelected, setEspeceSelected] = useState("Toutes les espèces")
+  const [especeClick, setEspeceClick] = useState(false)
+
+  function selectEspece(espece) {
+    setEspeceClick(false);
+    setEspeceSelected(espece);
+  }
+
+  function selectZoo(zoo) {
+    setZooClick(false);
+    setZooSelected(zoo);
+  }
+
+  const especeTab = Array.from(
+    new Set(data.map((baby) => baby.espece)
+                .sort()
+  ))
+
+  const zooTab = Array.from(
+    new Set(data.map((baby) => baby.zoo)
+                .sort()
+  ))
+
+  especeTab.unshift("Toutes les espèces")
+  zooTab.unshift("Tous les zoos")
 
   return (
     <Layout pageTitle="Naissances" language={"french"}>
       <Flex>
+        <Menu size={especeClick ? 19.18 + 31.82*especeTab.length : 47}>
+          {especeClick ? 
+            especeTab.map((espece) => {return<List onClick={() => 
+              selectEspece(espece)}>{espece}</List>})
+          : <List onClick={() => {setEspeceClick(true)}}><b>
+              {"Espèce séléctionnée: " + especeSelected}
+            </b></List>}
+        </Menu>
+        <Menu size={zooClick ? 19.18 + 31.82*zooTab.length : 47}>
+          {zooClick ? 
+            zooTab.map((zoo) => {return<List onClick={() => 
+              selectZoo(zoo)}>{zoo}</List>})
+          : <List onClick={() => {setZooClick(true)}}><b>
+              {"Zoo séléctionnée: " + zooSelected}
+            </b></List>}
+        </Menu>
+      </Flex>
+      <Flex>
         {data.sort((a, b) => new Date(b.date.split('.').reverse().join('-')) - new Date(a.date.split('.').reverse().join('-')))
-             .map((baby) => {return(<BabyPanel data={baby}></BabyPanel>);})}
+             .map((baby) => {return(<BabyPanel data={baby} zoo={zooSelected} espece={especeSelected}></BabyPanel>);})}
       </Flex>
     </Layout>
   );
@@ -24,7 +86,7 @@ const Born = ({ children }) => {
 
 const data = [
   {
-    "espece": "Tigre Sumatra",
+    "espece": "Tigre de Sumatra",
     "zoo": "Zoo d'Amiens",
     "date": "17.09.2022",
     "parents": [
@@ -40,7 +102,7 @@ const data = [
   },
   {
     "espece": "Puma",
-    "zoo": "Zoo Vincennes",
+    "zoo": "Zoo de Vincennes",
     "date": "21.08.2020",
     "parents": [
       "Maeli",
@@ -54,7 +116,7 @@ const data = [
     ]
   },
   {
-    "espece": "Tigre Sumatra",
+    "espece": "Tigre de Sumatra",
     "zoo": "Le Pal",
     "date": "26.12.2022",
     "parents": [
@@ -69,8 +131,8 @@ const data = [
     ]
   },
   {
-    "espece": "Panthère Sri-Lanka",
-    "zoo": "Zoo Cerza",
+    "espece": "Panthère du Sri-Lanka",
+    "zoo": "Zoo de Cerza",
     "date": "29.08.2022",
     "parents": [
       "Walawé",
@@ -92,7 +154,7 @@ const data = [
     ]
   },
   {
-    "espece": "Guépard Soudan",
+    "espece": "Guépard du Soudan",
     "zoo": "Zoo Cerza",
     "date": "24.04.2021",
     "parents": [
@@ -115,7 +177,7 @@ const data = [
     ]
   },
   {
-    "espece": "Panthère Sri-Lanka",
+    "espece": "Panthère du Sri-Lanka",
     "zoo": "Zoo Cerza",
     "date": "19.04.2021",
     "parents": [
@@ -206,7 +268,7 @@ const data = [
     ]
   },
   {
-    "espece": "Panthère Sri-Lanka",
+    "espece": "Panthère du Sri-Lanka",
     "zoo": "Parc de Lumigny",
     "date": "11.08.2022",
     "parents": [
@@ -351,7 +413,7 @@ const data = [
   },
   {
     "espece": "Ocelot",
-    "zoo": "Zoo d'Asson'",
+    "zoo": "Zoo d'Asson",
     "date": "01.07.2022",
     "parents": [
       "Xxxx",
@@ -559,7 +621,7 @@ const data = [
     ]
   },
   {
-    "espece": "Panthère Sri-Lanka",
+    "espece": "Panthère du Sri-Lanka",
     "zoo": "Zoo de Maubeuge",
     "date": "03.06.2021",
     "parents": [
