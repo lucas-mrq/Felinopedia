@@ -1,21 +1,28 @@
 [
-    {	
-        "title": "Bienvenue",
-        "introduction": "",
-        "dataContent": [],
-        "facebookData": {
-            "icon": "",
-            "image": "./welcome.jpg",
-            "texte": "",
-            "title": "",
-            "date": ""
-          },
-        "instagramData": {
-            "icon": "",
-            "image": "./welcome.jpg",
-            "texte": "",
-            "title": "",
-            "date": ""
-          }
-    }
+  {	
+      "title": "Pour les amoureux de félins",
+      "introduction": "Après avoir découvert React durant un stage en études d'ingénieur, j'ai décidé de mettre mes compétences à profit dans un projet personnel qui me tient à cœur. Depuis tout petit, je suis fasciné par les félins, petits comme grands. Cette passion ne m'a jamais quitté, même en grandissant.",
+      "dataContent": [
+          "Mon but est de créer un site qui rassemble tout ce qui concerne les félins, particulièrement dans les zoos français, de leur histoire à leur sauvegarde en passant par les différents programmes de recherche sur ces animaux majestueux.",
+          "Lorsque j'étais enfant, j'ai visité plusieurs zoos et j'ai vu de nombreux félins. Je me suis toujours demandé ce qu'ils sont devenus, où ils sont et si, lorsque je retournerais dans ces zoos, je les verrais à nouveau. C'est ce qui m'a poussé à créer ce site. Je souhaite donner aux passionnés de félins une plateforme pour découvrir tout ce qui se passe dans les zoos de France, pour comprendre la place des félins en captivité et pour en savoir plus sur ces animaux sauvages.",
+          "Le site Félinopédia est divisé en quatre grandes parties. La première partie est celle des articles, où je vais écrire sur les différents félins, leurs habitats, leurs modes de vie, les menaces qui pèsent sur eux et les différentes façons dont nous pouvons les protéger. La deuxième partie est un carnet rose des naissances de félins en zoo en France. Je voudrais mettre en avant ces naissances pour montrer que les zoos font également un travail important pour la sauvegarde des espèces. La troisième partie est le félinopédia proprement dit, un inventaire des différentes espèces de félins, petits et grands, dans chaque zoo de France. Cela permettra aux visiteurs du site de savoir où trouver les différents félins dans les zoos de France. Enfin, la dernière partie est une carte de la France avec l'emplacement de tous les zoos du pays. Les utilisateurs pourront facilement trouver les zoos près de chez eux.",
+          "J'aimerais également mettre en avant notre compte Instagram, @felinopedia.fr, où nous posterons des photos et des informations sur les félins, ainsi que des mises à jour sur les dernières naissances de félins en France.",
+          "Instagram",
+          "En somme, Félinopédia est un projet personnel que je suis heureux de partager avec tous les amoureux des félins. Je suis convaincu que ce site sera une source précieuse d'informations pour ceux qui cherchent à en apprendre plus sur ces animaux incroyables."
+      ],
+      "facebookData": {
+          "icon": "",
+          "image": "./instagram.jpg",
+          "texte": "",
+          "title": "",
+          "date": ""
+        },
+      "instagramData": {
+          "icon": "#11574E",
+          "image": "./instagram.jpg",
+          "texte": "Premier post pour Félinopédia !",
+          "title": "Felinopedia",
+          "date": "25.03.2023"
+      }
+  }
 ]
