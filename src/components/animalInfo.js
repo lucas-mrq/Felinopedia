@@ -12,7 +12,9 @@ const Image = styled(GatsbyImage)`
   border-width: 3px;
   border-color: #FFCBA5;
   border-radius: 5px;
-  height: 50%;
+  width: 90%;
+  padding-top: 1%;
+  position: relative;
 `
 const TextArea = styled.div`
   height: calc(49% - 26px - 60px);
