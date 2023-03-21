@@ -165,10 +165,16 @@ const zoo = [
     "position": ["2", "23"],
   },
   {
+    "name": "Espace Zoologique de Saint-Martin la Plaine",
+    "color": "#EE8629",
+    "border": "#11957F",
+    "position": ["7", "43"],
+  },
+  {
     "name": "Zoo de la Palmyre",
     "color": "#386D1D",
     "border": "#000000",
-    "position": ["5", "-44"],
+    "position": ["-6", "-44"],
   },
   {
     "name": "Zoo de Pessac",
