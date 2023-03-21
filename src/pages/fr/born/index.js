@@ -767,6 +767,21 @@ const data = [
         "sexe": "mâle",
       }
     ]
+  },
+  {
+    "espece": "Chat de Geoffroy",
+    "zoo": "Domaine des Fauves",
+    "date": "17.05.2021",
+    "parents": [
+      "Xxxx",
+      "Xxxx"
+    ],
+    "babys": [
+      {
+        "name": "Lima",
+        "sexe": "femelle",
+      }
+    ]
   }
 ]
 
