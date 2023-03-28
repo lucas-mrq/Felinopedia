@@ -52,7 +52,6 @@ const Zoo = styled.div`
 `
 
 const Liste = () => {
-  const [selectedZoo, setSelectedZoo] = useState(null)
   return (
     <Layout pageTitle="Liste des Zoos" language={"french"}>
       <Flex>
@@ -63,7 +62,7 @@ const Liste = () => {
               src="../../images/map-france.png"
             />
           </Image>
-          {zoo.map((data, index) => {return <Zoo name={data.name} color={data.color} border={data.border} borderForm={data.borderForm} position={[data.position[0], data.position[1]]} zIndex={33-index} onClick={() => setSelectedZoo(data.name)}>.</Zoo>})}
+          {zoo.map((data, index) => {return <Zoo name={data.name} color={data.color} border={data.border} borderForm={data.borderForm} position={[data.position[0], data.position[1]]} zIndex={33-index}>.</Zoo>})}
         </MapArea>
       </Flex>
     </Layout>

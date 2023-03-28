@@ -51,6 +51,9 @@ const ArticleContent = ({ filename }) => {
       }
     `)
 
+    console.log(filename);
+    console.log(data.allFile.edges);
+
     const articleData = data.allFile.edges.find(edge => edge.node.childDataJson.title === filename).node.childDataJson;
 
     function format(txt) {
