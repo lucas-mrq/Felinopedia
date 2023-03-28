@@ -51,10 +51,8 @@ const ArticleContent = ({ filename }) => {
       }
     `)
 
-    console.log(filename);
-    console.log(data.allFile.edges);
-
-    const articleData = data.allFile.edges.find(edge => edge.node.childDataJson.title === filename).node.childDataJson;
+    var articleData = data.allFile.edges.find(edge => edge.node.childDataJson.title ? edge.node.childDataJson.title === filename : null)
+    articleData = articleData.node.childDataJson ? articleData.node.childDataJson : null;
 
     function format(txt, idx) {
       if (txt === 'Facebook') {
@@ -65,14 +63,18 @@ const ArticleContent = ({ filename }) => {
       return <Text key={idx}>{txt}</Text>
     }
 
-    return (
-      <>
-        <Text>
-            {articleData.introduction}
-        </Text>
-        {articleData.dataContent.map((data, index) => {return format(data, index);})}
-      </>
-    )
+    if (articleData){
+      return (
+        <>
+          <Text>
+              {articleData.introduction}
+          </Text>
+          {articleData.dataContent.map((data, index) => {return format(data, index);})}
+        </>
+      )
+    } else {
+      return null;
+    }
   }
 
 export default ArticleContent
