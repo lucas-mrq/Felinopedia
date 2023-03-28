@@ -42,8 +42,8 @@ const BabyPanel = ({ data, zoo, espece }) => {
                 <Infos>{data.date}</Infos>
                 <Infos><u>Parents</u>{" " + data.parents[0] + " & " + data.parents[1]}</Infos>
                 <Babys>
-                    {data.babys.map((baby) => {return(
-                    <Baby>
+                    {data.babys.map((baby, index) => {return(
+                    <Baby key={index}>
                         <b>{baby.name}</b>
                         <div>{baby.sexe}</div>
                     </Baby>

@@ -56,13 +56,13 @@ const ArticleContent = ({ filename }) => {
 
     const articleData = data.allFile.edges.find(edge => edge.node.childDataJson.title === filename).node.childDataJson;
 
-    function format(txt) {
+    function format(txt, idx) {
       if (txt === 'Facebook') {
-        return <Facebook data={articleData.facebookData}/>
+        return <Facebook key={idx} data={articleData.facebookData}/>
       } else if (txt === 'Instagram'){
-        return <Instagram data={articleData.instagramData}/>
+        return <Instagram key={idx} data={articleData.instagramData}/>
       }
-      return <Text>{txt}</Text>
+      return <Text key={idx}>{txt}</Text>
     }
 
     return (
@@ -70,7 +70,7 @@ const ArticleContent = ({ filename }) => {
         <Text>
             {articleData.introduction}
         </Text>
-        {articleData.dataContent.map((data) => {return format(data);})}
+        {articleData.dataContent.map((data, index) => {return format(data, index);})}
       </>
     )
   }

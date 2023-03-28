@@ -13,8 +13,8 @@ const Flex = styled.div`
 const Article = ({ data }) => {
   return (
     <Layout pageTitle="Article" language={"french"}>
-      <Flex>{data.allMdx.nodes.map((node) => node.frontmatter.title[0]==="F" ? null :
-        <ArticlePanel key={node.id}
+      <Flex>{data.allMdx.nodes.map((node, index) => node.frontmatter.title[0]==="F" ? null :
+        <ArticlePanel key={index}
                       title={node.frontmatter.title} 
                       link={`/fr/press/${node.slug.toLowerCase()}`} 
                       date={node.frontmatter.date} 

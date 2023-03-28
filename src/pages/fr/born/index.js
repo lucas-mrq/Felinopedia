@@ -60,7 +60,7 @@ const Born = ({ children }) => {
       <Flex>
         <Menu size={especeClick ? 19.18 + 31.82*especeTab.length : 47}>
           {especeClick ? 
-            especeTab.map((espece) => {return<List onClick={() => 
+            especeTab.map((espece, index) => {return<List key={index} onClick={() => 
               selectEspece(espece)}>{espece}</List>})
           : <List onClick={() => {setEspeceClick(true)}}><b>
               {"Espèce séléctionnée: " + especeSelected}
@@ -68,7 +68,7 @@ const Born = ({ children }) => {
         </Menu>
         <Menu size={zooClick ? 19.18 + 31.82*zooTab.length : 47}>
           {zooClick ? 
-            zooTab.map((zoo) => {return<List onClick={() => 
+            zooTab.map((zoo, index) => {return<List key={index} onClick={() => 
               selectZoo(zoo)}>{zoo}</List>})
           : <List onClick={() => {setZooClick(true)}}><b>
               {"Zoo séléctionnée: " + zooSelected}
@@ -77,7 +77,7 @@ const Born = ({ children }) => {
       </Flex>
       <Flex>
         {data.sort((a, b) => new Date(b.date.split('.').reverse().join('-')) - new Date(a.date.split('.').reverse().join('-')))
-             .map((baby) => {return(<BabyPanel data={baby} zoo={zooSelected} espece={especeSelected}></BabyPanel>);})}
+             .map((baby, index) => {return(<BabyPanel key={index} data={baby} zoo={zooSelected} espece={especeSelected}></BabyPanel>);})}
       </Flex>
     </Layout>
   );

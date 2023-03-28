@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Layout from '../../components/layout'
 import { StaticImage } from 'gatsby-plugin-image'
 import styled from "styled-components"
@@ -62,7 +62,7 @@ const Liste = () => {
               src="../../images/map-france.png"
             />
           </Image>
-          {zoo.map((data, index) => {return <Zoo name={data.name} color={data.color} border={data.border} borderForm={data.borderForm} position={[data.position[0], data.position[1]]} zIndex={33-index}>.</Zoo>})}
+          {zoo.map((data, index) => {return <Zoo key={index} name={data.name} color={data.color} border={data.border} borderForm={data.borderForm} position={[data.position[0], data.position[1]]} zIndex={33-index}>.</Zoo>})}
         </MapArea>
       </Flex>
     </Layout>
