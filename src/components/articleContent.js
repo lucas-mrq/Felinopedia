@@ -51,8 +51,8 @@ const ArticleContent = ({ filename }) => {
       }
     `)
 
-    var articleData = data.allFile.edges.find(edge => edge.node.childDataJson.title ? edge.node.childDataJson.title === filename : null)
-    articleData = articleData.node.childDataJson ? articleData.node.childDataJson : null;
+    var articleData = data.allFile.edges.find(edge => edge.node.childDataJson.title === filename)
+    articleData = articleData ? articleData.node.childDataJson : null;
 
     function format(txt, idx) {
       if (txt === 'Facebook') {
