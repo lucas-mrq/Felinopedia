@@ -59,7 +59,7 @@ const ArticlePost = ({ data }) => {
   const image = getImage(data.mdx.frontmatter.hero_image)
   return (
     <Layout pageTitle={data.title} language={"french"}>
-      <Title>{data.mdx.frontmatter.title}</Title>
+      <Title>{data.mdx.frontmatter.jsonName}</Title>
       <Main>
         <Image>
           <GatsbyImage

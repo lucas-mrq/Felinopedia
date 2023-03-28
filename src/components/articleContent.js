@@ -7,8 +7,9 @@ import "../styles.css"
 
 const Text = styled.div`
   min-width: 300px;
-  margin: 10px;
+  margin: 10px 10% 10px 10%;
   text-align : justify;
+  font-size: 18px;
 `
 
 const ArticleContent = ({ filename }) => {
@@ -49,6 +50,8 @@ const ArticleContent = ({ filename }) => {
         }
       }
     `)
+    
+    console.log(data.allFile.edges[11].node.childDataJson);
 
     const articleData = data.allFile.edges.find(edge => edge.node.childDataJson.title === filename).node.childDataJson;
 
