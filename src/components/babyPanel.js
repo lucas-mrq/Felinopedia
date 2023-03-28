@@ -34,7 +34,6 @@ const Baby = styled.div`
 `;
 
 const BabyPanel = ({ data, zoo, espece }) => {
-    console.log(data)
     if ((data.zoo === zoo || zoo === "Tous les zoos") && (data.espece === espece || espece === "Toutes les espèces")) {
         return (
             <Panel>

@@ -53,7 +53,6 @@ const Zoo = styled.div`
 
 const Liste = () => {
   const [selectedZoo, setSelectedZoo] = useState(null)
-  console.log(selectedZoo)
   return (
     <Layout pageTitle="Liste des Zoos" language={"french"}>
       <Flex>

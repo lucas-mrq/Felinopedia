@@ -165,7 +165,6 @@ const FelinopediaPost = ({ data }) => {
   if (!(data.mdx.frontmatter.title[0] === "F")) {
     return <Layout pageTitle="Error" language={"french"}/>;
   }
-  console.log(data)
   const animalData = data.mdx.frontmatter
   return (
     <Layout pageTitle={animalData.title} language={"french"}>
