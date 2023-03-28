@@ -10,7 +10,7 @@ Felinopédia has a vast selection of engaging articles on felines, French zoos, 
 
 In addition, Félinopedia features a comprehensive database that allows you to follow the lives and journeys of these fascinating animals and learn more about them. We also provide an interactive map of France that makes it easy to locate zoos near you.
 
-We invite you to check out our project and explore our [website](https://felinopedia.gatsbyjs.io/) ! Thank you for your interest in Félinopedia, and we hope you enjoy your visit.
+We invite you to check out our project and explore our [website](https://felinopedia.gatsbyjs.io/fr/press) ! Thank you for your interest in Félinopedia, and we hope you enjoy your visit.
 
 ## Contact
 
